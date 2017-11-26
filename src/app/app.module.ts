@@ -20,6 +20,7 @@ import { AddVideoComponent } from './module/add-video/add-video.component';
 import { ViewVideoComponent } from './module/view-video/view-video.component';
 import { HomePageComponent } from './home/home-page/home-page.component';
 import { LandingPageComponent } from './home/landing-page/landing-page.component';
+import { SearchSongComponent } from './module/search-song/search-song.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { LandingPageComponent } from './home/landing-page/landing-page.component
     AddVideoComponent,
     ViewVideoComponent,
     HomePageComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    SearchSongComponent
   ],
   imports: [
     BrowserModule,

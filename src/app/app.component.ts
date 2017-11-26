@@ -11,11 +11,5 @@ export class AppComponent {
   show = true;
 
   constructor() {
-    // if (this.component === 'register') {
-    //   this.show = true;
-    // }
-    // else {
-    //   this.show = false;
-    // }
   }
 }

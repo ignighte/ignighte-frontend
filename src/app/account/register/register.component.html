@@ -25,14 +25,17 @@
       </div>      
 
       <div class="form-actions">
-          <button type="submit" class="btn btn-primary">Register</button>
-          <button type="reset" class="btn btn-danger">Cancel</button>
+          <button type="submit" class="btn btn-primary" (click)='register()'>Register</button>
+          <button type="reset" class="btn btn-danger">Reset Field</button>
       </div>
   </form>
 
   <hr>
 
   <form>
-        <button class="btn btn-secondary"><a routerLink="/home">Go Back to Home</a></button>            
+    <h4> Already Have an Account? Login Now! </h4>
+    <button class="btn btn-info"><a routerLink="/login">Login</a></button>   
+    <button class="btn btn-secondary"><a routerLink="/home">Go Back to Home</a></button>                    
   </form>
+
 </div>
