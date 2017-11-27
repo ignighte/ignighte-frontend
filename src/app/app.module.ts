@@ -7,20 +7,25 @@ import { Location } from '@angular/common';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 // internal module
-import { AppRoutingModule } from './module/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
 // internal components
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './account/register/register.component';
 import { LoginComponent } from './account/login/login.component';
 import { LogoutComponent } from './account/logout/logout.component';
-import { ViewPlaylistComponent } from './module/view-playlist/view-playlist.component';
-import { AddPlaylistComponent } from './module/add-playlist/add-playlist.component';
-import { AddVideoComponent } from './module/add-video/add-video.component';
-import { ViewVideoComponent } from './module/view-video/view-video.component';
+import { ViewPlaylistComponent } from './page/view-playlist/view-playlist.component';
+import { AddPlaylistComponent } from './page/add-playlist/add-playlist.component';
+import { AddVideoComponent } from './page/add-video/add-video.component';
+import { ViewVideoComponent } from './page/view-video/view-video.component';
 import { HomePageComponent } from './home/home-page/home-page.component';
 import { LandingPageComponent } from './home/landing-page/landing-page.component';
-import { SearchSongComponent } from './module/search-song/search-song.component';
+import { SearchSongComponent } from './page/search-song/search-song.component';
+import { NowPlayingPipe } from './pipe/now-playing.pipe';
+import { VideoPlayerComponent } from './video/video-player/video-player.component';
+import { VideoPlaylistComponent } from './video/video-playlist/video-playlist.component';
+import { VideoSearchComponent } from './video/video-search/video-search.component';
+import { SearchResultComponent } from './video/search-result/search-result.component';
 
 
 @NgModule({
@@ -35,7 +40,12 @@ import { SearchSongComponent } from './module/search-song/search-song.component'
     ViewVideoComponent,
     HomePageComponent,
     LandingPageComponent,
-    SearchSongComponent
+    SearchSongComponent,
+    NowPlayingPipe,
+    VideoPlayerComponent,
+    VideoPlaylistComponent,
+    VideoSearchComponent,
+    SearchResultComponent
   ],
   imports: [
     BrowserModule,
