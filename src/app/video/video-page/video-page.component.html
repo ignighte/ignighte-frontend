@@ -1,48 +1,68 @@
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    
+<!-- Commented Out the material design cells and layouts to be subbed in with CSS, left the buttons -->
+
+<!-- <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header"> -->
+<div>
+<h1> This is top of the video page component</h1>
+<hr>
       <!-- Search bar, Top, Video -->
-      <header class="mdl-layout__header">
-          <div class="mdl-layout-title">
+      <!-- <header class="mdl-layout__header">
+          <div class="mdl-layout-title"> -->
+      <header>
+          <!-- <div>                     -->
             <!-- Logo -->
             <!-- <img src="assets/logo.png"> -->
-          </div>
-          <nav class="mdl-navigation">
+          <!-- </div> -->
+
+          <!-- <nav class="mdl-navigation"> -->
+          <!-- Video Serach Function -->
+          <nav class = "vid-search">
             <app-video-search (videosUpdated)="handleSearchVideo($event)" [loadingInProgress]="loadingInProgress">
+              <h1 *ngIf="(videosUpdated)">Top Videos</h1>
             </app-video-search>
           </nav>
 
           <hr>
 
-          <!-- Video Expand Bar -->
-          <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button toggle-playlist-icon" (click)="togglePlaylist()">
+          <!-- Playlist Expand Bar -->
+          <!-- <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button toggle-playlist-icon" (click)="togglePlaylist()"> -->
+          <div aria-expanded="false" role="button" tabindex="0" (click)="togglePlaylist()">                  
             <i class="material-icons"></i>
           </div>
       </header>
     
-      <!-- Playlist Queue -->
-      <app-video-playlist [repeat]="repeat" [shuffle]="shuffle" [playlistToggle]="playlistToggle" [playlistNames]="playlistNames" [videoPlaylist]="videoPlaylist">
-          Playlist
-      </app-video-playlist>
-      
+      <div class ="vid-playlist">
+        <!-- Playlist Queue -->
+        <app-video-playlist [repeat]="repeat" [shuffle]="shuffle" [playlistToggle]="playlistToggle" [playlistNames]="playlistNames" [videoPlaylist]="videoPlaylist">
+            Playlist
+        </app-video-playlist>
+      </div>
+
       <hr>
     
       <!-- Display the Songs on Search -->
-      <main class="mdl-layout__content" (OnScrollMethod)="searchMore()" ScrollDistance="1">
-        <div class="page-content" [ngClass]="{'blur-main-playlist-opened': playlistToggle}">
+      <!-- Remove MD for css -->
+      <!-- <main class="mdl-layout__content" (OnScrollMethod)="searchMore()" ScrollDistance="1">
+        <div class="page-content" [ngClass]="{'blur-main-playlist-opened': playlistToggle}"> -->
 
-          <app-search-result *ngIf="videoList.length" class="mdl-grid" (videoPlaylist)="checkAddToPlaylist($event)" [videoList]="videoList" [loadingInProgress]="loadingInProgress">
+          <!-- TODO : ADD a button to toggle -->
+      <main class = "vid-results">
+          <div class = "indiv-search">
+
+          <!-- <app-search-result *ngIf="videoList.length" class="mdl-grid" (videoPlaylist)="checkAddToPlaylist($event)" [videoList]="videoList" [loadingInProgress]="loadingInProgress">                  -->
+          <app-search-result *ngIf="videoList.length" (videoPlaylist)="checkAddToPlaylist($event)" [videoList]="videoList" [loadingInProgress]="loadingInProgress">
           </app-search-result>
 
-          <div class="loader" *ngIf="!videoList.length">
+          <!-- <div class="loader" *ngIf="!videoList.length">
             <div class="loading"></div>
-          </div>
+          </div> -->
         </div>
       </main>
-    
     </div>
     
     <hr>
     <!-- Video Player -->
-    <app-video-player (closePlaylist)="closePlaylist()" (importPlaylist)="importPlaylist($event)" (exportPlaylist)="exportPlaylist()" (clearPlaylist)="clearPlaylist()" (playFirstInPlaylist)="playFirstInPlaylist()" (repeatActive)="repeatActive($event)" (shuffleActive)="shuffleActive($event)"
-      (nextVideoEvent)="nextVideo()" (prevVideoEvent)="prevVideo()">
-    </app-video-player>
+    <footer>
+        <app-video-player (closePlaylist)="closePlaylist()" (importPlaylist)="importPlaylist($event)" (exportPlaylist)="exportPlaylist()" (clearPlaylist)="clearPlaylist()" (playFirstInPlaylist)="playFirstInPlaylist()" (repeatActive)="repeatActive($event)" (shuffleActive)="shuffleActive($event)"
+          (nextVideoEvent)="nextVideo()" (prevVideoEvent)="prevVideo()">
+        </app-video-player>
+    </footer>

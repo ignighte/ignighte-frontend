@@ -1,3 +1,5 @@
+<h1> My Playlist </h1>
+
 <div id="playlist" class="playlist" [ngClass]="{'opened': playlistToggle}">
     
       <div *ngFor="let video of videoPlaylist; let i = index;"
@@ -6,12 +8,23 @@
            (click)="play(video.id)"
            [ngClass]="{'playing': currentPlaying(video.id)}">
     
-        <div class="playlist-thumbnail"
+        <!-- <div class="playlist-thumbnail"
              [ngStyle]="{'background': '#000 url(' + video.snippet.thumbnails.default.url + ') center center no-repeat', 'background-size': '100%'}">
-          <span class="no-in-playlist">{{ i + 1 }}</span>
+          <span class="no-in-playlist">{{ i + 1 }}</span> -->
+          <!-- comment out video duration -->
           <!-- <span class="video-duration">{{ video.contentDetails.duration | videoDuration }}</span> -->
-          <i class="material-icons delete-from-playlist" (click)="removeFromPlaylist(video)">cancel</i>
-        </div>
+          <!-- <i class="material-icons delete-from-playlist" (click)="removeFromPlaylist(video)">cancel</i>
+        </div> -->
+
+        <!-- display the name of the song instead of photo -->
+      <div class="playlist-thumbnail">
+            <!-- [ngStyle]="{'background': '#000 url(' + video.snippet.thumbnails.default.url + ') center center no-repeat', 'background-size': '100%'}"> -->
+          {{video.snippet.title| nowPlaying}}
+        <span class="empty-playlist">{{ i + 1 }}</span>
+        <!-- delete Video on playlist -->
+        <i class="material-icons delete-from-playlist" (click)="removeFromPlaylist(video)">cancel</i>
+      </div>
+   
     
         <div class="opened-item-info" [ngClass]="{'closed': !playlistToggle}" *ngIf="playlistNames">
           {{ video.snippet.title | nowPlaying }}

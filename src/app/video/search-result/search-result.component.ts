@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { YoutubePlayerService } from '../../service/youtube-player.service';
 import { PlaylistStoreService } from '../../service/playlist-store.service';
+import { YoutubeApiService } from '../../service/youtube-api.service';
 
 @Component({
   selector: 'app-search-result',
