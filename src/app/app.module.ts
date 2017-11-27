@@ -32,21 +32,26 @@ import { YoutubePlayerService } from './service/youtube-player.service';
 import { PlaylistStoreService } from './service/playlist-store.service';
 import { NotificationService } from './service/notification.service';
 import { BrowserNotificationService } from './service/browser-notification.service';
+import { VideoPageComponent } from './video/video-page/video-page.component';
 
 
 @NgModule({
   declarations: [
+    VideoPageComponent,
     AppComponent,
     RegisterComponent,
     LoginComponent,
     LogoutComponent,
+
     ViewPlaylistComponent,
     AddPlaylistComponent,
     AddVideoComponent,
     ViewVideoComponent,
+
     HomePageComponent,
     LandingPageComponent,
     SearchSongComponent,
+
     NowPlayingPipe,
     VideoPlayerComponent,
     VideoPlaylistComponent,
