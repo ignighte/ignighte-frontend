@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // internal Components
-import { HomePageComponent } from '../home/home-page/home-page.component';
-import { LandingPageComponent } from '../home/landing-page/landing-page.component';
-import { LoginComponent } from '../account/login/login.component';
-import { RegisterComponent } from '../account/register/register.component';
-import { SearchSongComponent } from '../module/search-song/search-song.component';
-import { AddVideoComponent } from '../module/add-video/add-video.component';
-import { AddPlaylistComponent } from '../module/add-playlist/add-playlist.component';
-import { ViewPlaylistComponent } from '../module/view-playlist/view-playlist.component';
-import { ViewVideoComponent } from '../module/view-video/view-video.component';
+import { HomePageComponent } from './home/home-page/home-page.component';
+import { LandingPageComponent } from './home/landing-page/landing-page.component';
+import { LoginComponent } from './account/login/login.component';
+import { RegisterComponent } from './account/register/register.component';
+import { SearchSongComponent } from './page/search-song/search-song.component';
+import { AddVideoComponent } from './page/add-video/add-video.component';
+import { AddPlaylistComponent } from './page/add-playlist/add-playlist.component';
+import { ViewPlaylistComponent } from './page/view-playlist/view-playlist.component';
+import { ViewVideoComponent } from './page/view-video/view-video.component';
 
 
 
