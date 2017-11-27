@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 import { Location } from '@angular/common';
@@ -26,6 +27,11 @@ import { VideoPlayerComponent } from './video/video-player/video-player.componen
 import { VideoPlaylistComponent } from './video/video-playlist/video-playlist.component';
 import { VideoSearchComponent } from './video/video-search/video-search.component';
 import { SearchResultComponent } from './video/search-result/search-result.component';
+import { YoutubeApiService } from './service/youtube-api.service';
+import { YoutubePlayerService } from './service/youtube-player.service';
+import { PlaylistStoreService } from './service/playlist-store.service';
+import { NotificationService } from './service/notification.service';
+import { BrowserNotificationService } from './service/browser-notification.service';
 
 
 @NgModule({
@@ -51,10 +57,18 @@ import { SearchResultComponent } from './video/search-result/search-result.compo
     BrowserModule,
     FormsModule,
     HttpModule,
+    ReactiveFormsModule,
     // RouterModule.forRoot(routes),
     AppRoutingModule
   ],
-  providers: [Location],
+  providers: [
+    Location,
+    YoutubeApiService,
+    YoutubePlayerService,
+    PlaylistStoreService,
+    NotificationService,
+    BrowserNotificationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
