@@ -1,23 +1,38 @@
 /* These are material design css. Changed to normal css */
 
 .top-of-page {
+  margin-top: 2rem;
+}
+
+.under-the-search-bar {
   margin-top: 5rem;
 }
 
-.boxed-result {
-  float: left;
-  width: 40rem;
+.boxed-result-header {
+  /* margin-top:5rem; */
+  float: right;
+  width: 38rem;
   border: 0.1rem solid white;
-  margin: 0.1rem, 0.1rem, 0.1rem, 0.1rem;
+  margin: 0.2rem, 0.2rem, 0.2rem, 0.2rem;
   text-align: center;
+  font-family: 'Cambria';
+}
+
+.boxed-player-header {
+  float: left;
+  width: 27.8rem;
+  border: 0.1rem solid white;
+  margin: 0.2rem, 0.2rem, 0.2rem, 0.2rem;
+  text-align: center;
+  font-family: 'Cambria';
 }
 
 .vid-results {
   border: 0.1rem solid white;
-  margin: 0.1rem, 0.1rem, 0.1rem, 0.1rem;
+  /* margin: 0.1rem, 0.1rem, 0.1rem, 0.1rem; */
   text-align: center;
-  height: 25rem;
-  width: 40rem;
+  height: 20rem;
+  width: 38rem;
   overflow: auto;
   float: right;
   /* padding-top: 10rem; */
@@ -31,9 +46,9 @@
   font-size: 150%;
 }
 
-.search-result {
+/* .search-result {
   display: inline-block;
-}
+} */
 
 .indiv-search {
   /* max-width: 30rem;
@@ -44,6 +59,7 @@
 
 .in-yt-player {
   float:left;
+  /* float:top; */
   /* padding-top: 10rem; */
   /* position:fixed; */
   /* right:1; */

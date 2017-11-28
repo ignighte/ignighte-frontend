@@ -1,8 +1,7 @@
 <!-- Commented Out the material design cells and layouts to be subbed in with CSS, left the buttons -->
 
-
-<h1> Search Videos</h1>
-<form [formGroup]="searchForm" (ngSubmit)="doSearch($event)">  
+<h1 class="search-video-title-header"> Search Videos</h1>
+<form class="search-bar-field" [formGroup]="searchForm" (ngSubmit)="doSearch($event)">  
 
     <!-- <div class="mdl-textfield mdl-js-textfield">
       <input class="mdl-textfield__input" formControlName="query" type="text" id="query" autocomplete="off">
