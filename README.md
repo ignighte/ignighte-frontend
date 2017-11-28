@@ -5,11 +5,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Configure GUI Project
 
 cd to a directory of your choice
-`git clone https://github.com/ignighte/ignighte-frontend.git`
-`cd ignighte-frontend`
-`npm install`
-`ng serve --open`
-
+```
+git clone https://github.com/ignighte/ignighte-frontend.git
+cd ignighte-frontend
+npm install
+ng serve --open
+```
 It should work.
 
 ~~## Configure DB/GUI Project~~ -> Deprecated See Above
