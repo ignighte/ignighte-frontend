@@ -1,85 +1,76 @@
 <!-- Commented Out the material design cells and layouts to be subbed in with CSS, left the buttons -->
-
+<!-- Disabled Size Alteration -->
 
 <div class="main-player-block">
   <h1>Video Player</h1>
     <div class="player-controls-block">
-      <div class="current-playing-text" *ngIf="superMinPlayer">
+      <!-- <div class="current-playing-text" *ngIf="superMinPlayer"> -->
+      <!-- Always display -->
+      <div class="current-playing-text">              
         <span class="now-playing-label">Now playing: </span>
         <span>{{ currentVideoText | nowPlaying }}</span>
       </div>
 
       <!-- Youtube Player -->
       <div class="player-containter" [ngClass]="{'minimized': minPlayer, 'super-minimized': superMinPlayer, 'player-fullscreen': fullscreenActive}">
+        <!-- If we figure out the css sizing shit, we can reopen -->
+
         <div class="player-view-controls">
-          <!-- Remove Resizer : TODO : change the settings in service as well -->
-          <!-- <i class="material-icons" *ngIf="!minPlayer && !superMinPlayer && !fullscreenActive" (click)="togglePlayer()">arrow_drop_down</i>
-          <i class="material-icons arrow_drop_up" *ngIf="minPlayer && !superMinPlayer && !fullscreenActive" (click)="togglePlayer()">arrow_drop_up</i> -->
-          <i class="material-icons minimize" *ngIf="!superMinPlayer && !fullscreenActive" (click)="minimizePlayer()">arrow_drop_down</i>
+          <!-- <i class="material-icons minimize" *ngIf="!superMinPlayer && !fullscreenActive" (click)="minimizePlayer()">arrow_drop_down</i> -->
         </div>
         <div class="main-yt-player-block">
-          <i class="material-icons" *ngIf="superMinPlayer" (click)="minimizePlayer()">zoom_out_map</i>
-          <div id="yt-player"></div>
+          <!-- <i class="material-icons" *ngIf="superMinPlayer" (click)="minimizePlayer()">zoom_out_map</i> -->
+          <div class="actual-player" id="yt-player"></div>
         </div>
       </div>
 
       <!-- Buttons for Playlist interaction -->
       <!-- TODO: Build this into a Single Nav Bar Beneath the Video Player -->
-      <span>
-        <button id="fullscreen_tip"
-                [ngClass]="{'active': fullscreenActive}" (click)="toggleFullscreen()">
-          <i class="material-icons">fullscreen</i>
-        </button>
-        <div data-mdl-for="fullscreen_tip">
-          Fullscreen
-        </div>
-      </span>  
+      <nav class = "video-player-navbar">
+          <!-- <span> -->
+            <!-- <button id="fullscreen_tip"
+                    [ngClass]="{'active': fullscreenActive}" (click)="toggleFullscreen()">
+              <i class="material-icons">zoom_out_map</i>
+              <h6>full</h6>
+            </button> -->
+          <!-- </span>   -->
+    
+          <button id="prev_tip" (click)="prevVideo()">
+            <i class="material-icons">skip_previous</i>
+            <h6>previous</h6>
+          </button>
+    
+          <button (click)="playPause('play')" *ngIf="playingEvent === 'pause'">
+            <i class="material-icons">play_circle_filled</i>
+            <h6>play</h6>
+          </button>
+    
+          <button (click)="playPause('pause')" *ngIf="playingEvent === 'play'">
+            <i class="material-icons">pause_circle_filled</i>
+            <h6>pause</h6>
+          </button>  
+          
+          <button id="next_tip" (click)="nextVideo()">
+            <i class="material-icons">skip_next</i>
+            <h6>next</h6>
+          </button>
 
-      <button id="prev_tip" (click)="prevVideo()">
-        <i class="material-icons">skip_previous</i>
-      </button>
+          <!-- <span class="repeat-shuffle-block"> -->
+    
+            <button id="repeat_tip" [ngClass]="{'active': repeat}"
+                    (click)="toggleRepeat()">
+              <i class="rpt-btn" class="material-icons">repeat_one</i>
+              <h6>repeat</h6>
+            </button>
 
-      <div data-mdl-for="prev_tip">
-        Previous
-      </div>
+            <button id="shuffle_tip" [ngClass]="{'active': shuffle}"
+              (click)="toggleShuffle()">
+              <i class="material-icons">shuffle</i>
+              <h6>shuffle</h6>
+            </button>
+          <!-- </span> -->
+        </nav>
 
-      <button (click)="playPause('play')" *ngIf="playingEvent === 'pause'">
-        <i class="material-icons">play_circle_filled</i>
-      </button>
-
-      <button (click)="playPause('pause')" *ngIf="playingEvent === 'play'">
-        <i class="material-icons">pause_circle_filled</i>
-      </button>  
-      
-      <button id="next_tip" (click)="nextVideo()">
-        <i class="material-icons">skip_next</i>
-      </button>
-
-      <div data-mdl-for="next_tip">
-        Next
-      </div>
-
-      <span class="repeat-shuffle-block">
-
-        <button id="repeat_tip" [ngClass]="{'active': repeat}"
-                (click)="toggleRepeat()">
-          <i class="material-icons">repeat_one</i>
-        </button>
-
-        <div data-mdl-for="repeat_tip">
-          Repeat This Song
-        </div>
-
-        <button id="shuffle_tip" [ngClass]="{'active': shuffle}"
-          (click)="toggleShuffle()">
-          <i class="material-icons">shuffle</i>
-        </button>
-
-        <div data-mdl-for="shuffle_tip">
-          Shuffle
-        </div>
-      
-      </span>
     </div>      
 
         <!-- Remove material design to override with css -->

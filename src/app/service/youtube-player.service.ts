@@ -32,6 +32,7 @@ export class YoutubePlayerService {
         this.yt_player = new _window.YT.Player('yt-player', {
           width: '440',
           height: '250',
+          margin: '1rem 1rem 1rem 1rem',
           playerVars: {
             iv_load_policy: '3',
             rel: '0'

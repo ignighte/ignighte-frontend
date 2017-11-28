@@ -30,15 +30,6 @@
           </div>
       </header>
     
-      <div class ="vid-playlist">
-        <!-- Playlist Queue -->
-        <app-video-playlist [repeat]="repeat" [shuffle]="shuffle" [playlistToggle]="playlistToggle" [playlistNames]="playlistNames" [videoPlaylist]="videoPlaylist">
-            Playlist
-        </app-video-playlist>
-      </div>
-
-      <hr>
-    
       <!-- Display the Songs on Search -->
       <!-- Remove MD for css -->
       <!-- <main class="mdl-layout__content" (OnScrollMethod)="searchMore()" ScrollDistance="1">
@@ -59,6 +50,15 @@
       </main>
     </div>
     
+    <hr>
+
+    <div class ="vid-playlist">
+      <!-- Playlist Queue -->
+      <app-video-playlist [repeat]="repeat" [shuffle]="shuffle" [playlistToggle]="playlistToggle" [playlistNames]="playlistNames" [videoPlaylist]="videoPlaylist">
+          Playlist
+      </app-video-playlist>
+    </div>
+
     <hr>
     <!-- Video Player -->
     <footer>

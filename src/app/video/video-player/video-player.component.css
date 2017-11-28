@@ -1,0 +1,32 @@
+.player-containter {
+    width : 10rem;
+}
+
+button {
+    size: fixed;
+}
+
+.video-player-navbar {
+    /* position: fixed;
+    bottom: 0;
+    width: 100%; */
+    /* list-style: none;
+    margin: 0 auto; */
+}
+
+i {
+    align-content: center;
+    vertical-align: middle;
+}
+
+.rpt-btn {
+    max-width: 70%;
+}
+
+h6 {
+    margin-top:0.5rem;
+}
+
+.actual-player {
+
+}
