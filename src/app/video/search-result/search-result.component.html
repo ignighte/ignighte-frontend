@@ -12,12 +12,12 @@
           {{ video.snippet?.title | nowPlaying }}
         </div>
         <div class="video-play-button">
-          <i class="material-icons">play_circle_filled</i>
+            <a><i class="material-icons">play_circle_filled</i></a>
         </div>
       </div>
       <!-- <div class="mdl-card__supporting-text"> -->
       <div>
-        <i (click)="addToPlaylist(video)" class="material-icons">playlist_add</i>
+          <a><i (click)="addToPlaylist(video)" class="material-icons">playlist_add</i></a>
       </div>
   </div>
 </div>

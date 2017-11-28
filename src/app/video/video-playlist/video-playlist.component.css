@@ -1,0 +1,31 @@
+.full-playlist-page {
+    /* border-left: 0.1rem solid white; */
+    /* float: right; */
+    /* font-synthesis: bold; */
+    /* max-height: 100%; */
+    /* overflow: scroll; */
+}
+
+.playlist-title-h2 {
+    font-family: 'Times New Roman';
+    /* overflow:scroll; */
+}
+
+.playlist-thumbnail {
+    width: 225%;
+    font-size: 150%;
+    border-top: 0.12rem solid white;
+    border-right: 0.15rem solid white;
+    border-left: 0.15rem solid white;
+    
+    /* font-synthesis: bold; */
+}
+
+.opened-item-info {
+    width: 225%;
+    text-align: center;
+    border-right: 0.15rem solid white;
+    border-left: 0.15rem solid white;
+    border-bottom: 0.12rem solid white;    
+    /* font-synthesis: bold; */
+}
