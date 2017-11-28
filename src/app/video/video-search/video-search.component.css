@@ -11,4 +11,13 @@ i {
     max-width: 85%;
     float: left;
     margin-right: 2%;
+    font-family: 'Cambria';
+}
+
+.search-video-title-header {
+    font-family: 'Cambria';
+}
+
+.search-bar-field {
+    /* margin-bottom: 5rem; */
 }
