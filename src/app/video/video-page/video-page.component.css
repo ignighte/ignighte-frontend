@@ -1,5 +1,10 @@
 /* These are material design css. Changed to normal css */
 
+html, body {
+  /* margin: 0.2rem, 0.2rem,0.2rem,0.2rem; */
+  /* padding: 0; */
+}
+
 .top-of-page {
   margin-top: 2rem;
 }
@@ -41,6 +46,30 @@
 /* .currently-playing-text {
   width: 100%;
 } */
+
+#playlist-tab {
+  border-left: 0.1rem solid white;
+  /* min-height: 100%; */
+  /* max-width: 100%; */
+  /* max-height: 100%; */
+  /* overflow: auto; */
+}
+
+#playlist-icon-i{
+  float:left;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+#playlist-icon-t {
+  float:right;
+  margin-top: 0.4rem;
+}
+
+#playlist-tab-d {
+  /* max-height: 100%; */
+  /* overflow: scroll; */
+}
 
 .now-playing-label {
   font-size: 150%;
