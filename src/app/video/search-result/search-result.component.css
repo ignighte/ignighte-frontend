@@ -1,3 +1,7 @@
-.mdl-cell custom-cell mdl-cell--2-col {
-    max-height: 50rem;
+.search-title {
+    position:fixed;
+}
+
+.searched-list {
+    /* margin-top: 5rem; */
 }

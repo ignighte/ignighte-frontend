@@ -14,7 +14,10 @@ export class YoutubeApiService {
 
   // For Display and connecting to YOutube API
   base_url = 'https://www.googleapis.com/youtube/v3/';
-  max_results = 30;
+  // Just Top 10 for now. Change it once we have
+  // 1. overflow Scroll [o] implemented
+  // 2. Or add in the max_result by themselves on screen.
+  max_results = 40;
 
   public nextToken: string;
   public lastQuery: string;
@@ -93,7 +96,6 @@ export class YoutubeApiService {
     } else {
       errMsg = error.message ? error.message : error.toString();
     }
-
     this.notificationService.showNotification(errMsg);
     return Promise.reject(errMsg);
   }

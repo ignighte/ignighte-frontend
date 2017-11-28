@@ -1,6 +1,7 @@
 <div id="wrapper">
 
 <!-- Header -->
+<!-- Declare header id for nav bar effect -->
 	<header id="header">
 		<div class="logo">
 			<span class="icon fa-fire"></span>
@@ -13,11 +14,14 @@
 				<h3>Ad-Free, Simple Youtube Music Playlist</h3>
 			</div>
 		</div>
+		<!-- Because we can MAKE Playlists before we REGISTER or LOGIN, it comes first -->
+		<!-- To see the playlist, you ned to be Logged in / or have passcode to it. -->
 		<nav>
 			<ul>
+				<li><a routerLink="/video-page">Create Playlist</a></li>
 				<li><a routerLink="/register">Register</a></li>								
-				<li><a routerLink="/login">Login</a></li>
-				<li><a routerLink="/video-page">Create Playlist</a></li>				
+				<li><a routerLink="/login">Login</a></li>					
+				<li><a routerLink="/view-playlist">View Playlists</a></li>													
 			</ul>
 		</nav>
 	</header>

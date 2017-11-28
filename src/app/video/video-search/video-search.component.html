@@ -1,12 +1,23 @@
+<!-- Commented Out the material design cells and layouts to be subbed in with CSS, left the buttons -->
+
+
+<h1> Search Videos</h1>
 <form [formGroup]="searchForm" (ngSubmit)="doSearch($event)">  
 
-    <div class="mdl-textfield mdl-js-textfield">
+    <!-- <div class="mdl-textfield mdl-js-textfield">
       <input class="mdl-textfield__input" formControlName="query" type="text" id="query" autocomplete="off">
       <label class="mdl-textfield__label" for="query">Search</label>
-    </div>
+    </div> -->
 
-    <button type="submit" class="mdl-button mdl-js-button mdl-button--icon">
+    <div>
+      <input class="mdl-textfield__input" formControlName="query" type="text" id="query" autocomplete="off">
+      <button type="submit">
+        <i class="material-icons">search</i>
+        <label class="mdl-textfield__label" for="query">Search</label>      
+      </button>          
+    </div>    
+
+    <!-- <button type="submit" class="mdl-button mdl-js-button mdl-button--icon">
       <i class="material-icons">search</i>
-    </button>
-
-  </form>
+    </button> -->  
+</form>
