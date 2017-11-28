@@ -14,7 +14,7 @@ It should work.
 
 ~~## Configure DB/GUI Project~~ -> Deprecated See Above
 
-~~On the root level folder `frontend` run `npm install` before you do anything. If your local angular cli version is lower than 1.5.2., please update it using commands at : https://github.com/angular/angular-cli#updating-angular-cli. After the angular cli is updated, run `npm install`
+~~On the root level folder `frontend` run `npm install` before you do anything. If your local angular cli version is lower than 1.5.2., please update it using commands at : https://github.com/angular/angular-cli#updating-angular-cli. After the angular cli is updated, run `npm install`~~
 
 
 ## Development server
