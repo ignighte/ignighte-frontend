@@ -1,0 +1,14 @@
+i {
+    align-content: center;
+    vertical-align: middle;
+}
+
+/* .material-icons {
+    margin-left: 1rem;
+} */
+
+.mdl-textfield__input {
+    max-width: 85%;
+    float: left;
+    margin-right: 2%;
+}

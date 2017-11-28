@@ -2,14 +2,14 @@
 <!-- Disabled Size Alteration -->
 
 <div class="main-player-block">
-  <h1>Video Player</h1>
+  <h1 class="boxed">Video Player</h1>
     <div class="player-controls-block">
       <!-- <div class="current-playing-text" *ngIf="superMinPlayer"> -->
-      <!-- Always display -->
-      <div class="current-playing-text">              
+      <!-- Always display What's playing -->
+      <!-- <div class="current-playing-text">              
         <span class="now-playing-label">Now playing: </span>
         <span>{{ currentVideoText | nowPlaying }}</span>
-      </div>
+      </div> -->
 
       <!-- Youtube Player -->
       <div class="player-containter" [ngClass]="{'minimized': minPlayer, 'super-minimized': superMinPlayer, 'player-fullscreen': fullscreenActive}">
@@ -20,8 +20,14 @@
         </div>
         <div class="main-yt-player-block">
           <!-- <i class="material-icons" *ngIf="superMinPlayer" (click)="minimizePlayer()">zoom_out_map</i> -->
-          <div class="actual-player" id="yt-player"></div>
+          <div class="actual-player" id="yt-player">
+          <!-- Always display What's playing -->
+          </div>
         </div>
+      </div>
+
+      <div class="current-playing-text">              
+          <span class="now-playing-label">Now playing: {{ currentVideoText | nowPlaying }}</span>
       </div>
 
       <!-- Buttons for Playlist interaction -->
@@ -34,7 +40,7 @@
               <h6>full</h6>
             </button> -->
           <!-- </span>   -->
-    
+  
           <button id="prev_tip" (click)="prevVideo()">
             <i class="material-icons">skip_previous</i>
             <h6>previous</h6>

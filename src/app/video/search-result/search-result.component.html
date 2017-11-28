@@ -3,8 +3,9 @@
 <!-- <div class="mdl-cell custom-cell mdl-cell--2-col" id="{{i + video.id}}" *ngFor="let video of videoList; let i = index;" [ngClass]="{'last-item': i === videoList.length-1}">
     <div class="demo-card-square mdl-card mdl-shadow--2dp">
       <div class="mdl-card__title mdl-card" (click)="play(video)" [ngStyle]="{'background': '#000 url(' + video.snippet?.thumbnails.high.url + ') center no-repeat', 'background-size': '125%'}"> -->
-<h1 *ngIf="videoList.length">Search Result</h1>
-<div id="{{i + video.id}}" *ngFor="let video of videoList; let i = index;" [ngClass]="{'last-item': i === videoList.length-1}">
+<!-- <h1 class="search-title" *ngIf="videoList.length">Search Result</h1>
+<hr> -->
+<div class = "searched-list" id="{{i + video.id}}" *ngFor="let video of videoList; let i = index;" [ngClass]="{'last-item': i === videoList.length-1}">
   <div>
       <div (click)="play(video)" [ngStyle]="{'background': '#000 url(' + video.snippet?.thumbnails.high.url + ') center no-repeat', 'background-size': '125%'}">
         <div class="video-informations">

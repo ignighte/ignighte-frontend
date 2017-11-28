@@ -1,14 +1,53 @@
 /* These are material design css. Changed to normal css */
 
+.top-of-page {
+  margin-top: 5rem;
+}
+
+.boxed-result {
+  float: left;
+  width: 40rem;
+  border: 0.1rem solid white;
+  margin: 0.1rem, 0.1rem, 0.1rem, 0.1rem;
+  text-align: center;
+}
+
 .vid-results {
-  height: 30rem;
+  border: 0.1rem solid white;
+  margin: 0.1rem, 0.1rem, 0.1rem, 0.1rem;
+  text-align: center;
+  height: 25rem;
+  width: 40rem;
   overflow: auto;
+  float: right;
+  /* padding-top: 10rem; */
+}
+
+/* .currently-playing-text {
+  width: 100%;
+} */
+
+.now-playing-label {
+  font-size: 150%;
+}
+
+.search-result {
+  display: inline-block;
 }
 
 .indiv-search {
-  max-width: 30rem;  
+  /* max-width: 30rem;
+  float: right; */
+  /* align-items: left; */
+  /* float: right;   */
 }
 
+.in-yt-player {
+  float:left;
+  /* padding-top: 10rem; */
+  /* position:fixed; */
+  /* right:1; */
+}
 
 /* .mdl-navigation {
   width: 10rem;

@@ -180,6 +180,7 @@ export class VideoPageComponent implements AfterViewInit {
     this.notificationService.showNotification('Playlist cleared.');
   }
 
+  // deprecated for now
   exportPlaylist(): void {
     if (this.videoPlaylist.length < 1) {
       this.notificationService.showNotification('Nothing to export.');
