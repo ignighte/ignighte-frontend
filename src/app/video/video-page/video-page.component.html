@@ -1,5 +1,13 @@
-<div class="row">
-    <div class="col col-md-5">
+<br>
+<header id="header">
+  <div class="logo">
+    <span class="icon fa-fire"></span>
+  </div>
+  <div class="content"></div>
+</header>
+
+<div class="row underline">
+    <div class="col col-md-5 shrink-fit">
       <!--Playlist container-->
       <div class="container float-left fit">
           <div id="playlist-tab-d" class ="vid-playlist">
@@ -7,7 +15,7 @@
           </div>
       </div>
     </div>
-    <div class="col col-md-7">
+    <div class="col col-md-7 shrink-fit">
       <!--Search bar-->
       <nav class="vid-search">
         <app-video-search (videosUpdated)="handleSearchVideo($event)" [loadingInProgress]="loadingInProgress"></app-video-search>

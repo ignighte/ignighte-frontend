@@ -30,7 +30,7 @@ export class YoutubePlayerService {
     let interval = setInterval(() => {
       if ((typeof _window.YT !== 'undefined') && _window.YT && _window.YT.Player) {
         this.yt_player = new _window.YT.Player('yt-player', {
-          width: '440',
+          width: '500',
           height: '250',
           playerVars: {
             iv_load_policy: '3',

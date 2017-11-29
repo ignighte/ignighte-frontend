@@ -7,7 +7,7 @@
   height: 75px;
   margin: 1rem;
   border: 1px solid white;
-  background: lightgrey;
+  background: linear-gradient(to bottom right, black , darkgrey);
 }
 
 .buttons {
@@ -49,4 +49,13 @@
 
 .playlist-thumbnail{
   height: 60%;
+}
+
+.no-in-playlist {
+  padding-left: 2%;
+  font-size: 150%;
+}
+
+.delete-from-playlist{
+  float: right;
 }

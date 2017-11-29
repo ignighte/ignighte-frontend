@@ -2,6 +2,7 @@
   width: 100%;
   border-bottom: 0.1rem solid white;
   margin: 0.2rem, 0.2rem, 0.2rem, 0.2rem;
+  background: black;
   text-align: center;
   font-family: 'Cambria';
 }
@@ -9,9 +10,10 @@
 .vid-results {
   border: 0.1rem solid white;
   text-align: center;
-  height: 18rem;
+  height: 14rem;
   width: 100%;
   overflow: auto;
+  background: linear-gradient(to right, black , darkgrey);
 }
 
 .now-playing-label {
@@ -35,8 +37,23 @@
 }
 
 .vid-playlist {
-  border: 0.1rem solid white;
-  height: 60rem;
+  border-left: 0.1rem solid white;
+  border-right: 0.1rem solid white;
+  border-bottom: 0.1rem solid white;
+  height: 40.5rem;
   width: 100%;
   overflow: auto;
+}
+
+.underline {
+  border-top: 0.1rem solid white;
+}
+
+.shrink-fit{
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+#header {
+  align-content: center;
 }
