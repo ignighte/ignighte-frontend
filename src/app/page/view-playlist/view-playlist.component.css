@@ -13,7 +13,7 @@ h1, h3, btn {
   margin-left: 25%;
   margin-right: 25%;
   border: 1px solid white;
-  background: linear-gradient(to right, black , darkgrey);
+  background: linear-gradient(to bottom right, black , darkgrey);
   height: 30rem;
   min-width: 50%;
 }
@@ -37,4 +37,5 @@ hr {
 
 .home {
   margin-left: 45%;
+  background: linear-gradient(to top left, black , darkgrey);
 }
