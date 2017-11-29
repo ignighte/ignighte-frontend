@@ -1,6 +1,5 @@
 .full-song-info {
   width: 100%;
-  border-top: 1px solid white;
 }
 
 .holder {
@@ -39,7 +38,10 @@
 
 .playlist-title-h1 {
   text-align: center;
+  color: #131416;
   font-family: 'Cambria';
+  background: linear-gradient(to bottom right, black , darkgrey);
+  border-bottom: 1px solid white;
 }
 
 .btn {
