@@ -1,31 +1,52 @@
-.full-playlist-page {
-    /* border-left: 0.1rem solid white; */
-    /* float: right; */
-    /* font-synthesis: bold; */
-    /* max-height: 100%; */
-    /* overflow: scroll; */
+.full-song-info {
+  width: 100%;
+  border-top: 1px solid white;
 }
 
-.playlist-title-h2 {
-    font-family: 'Times New Roman';
-    /* overflow:scroll; */
+.holder {
+  height: 75px;
+  margin: 1rem;
+  border: 1px solid white;
+  background: lightgrey;
 }
 
-.playlist-thumbnail {
-    width: 225%;
-    font-size: 150%;
-    border-top: 0.12rem solid white;
-    border-right: 0.15rem solid white;
-    border-left: 0.15rem solid white;
-    
-    /* font-synthesis: bold; */
+.buttons {
+  float: left;
+  width: 25%;
+  height: 100%;
+}
+
+.song-thumbnail {
+  width: 74%;
+  height: 100%;
+  float: right;
+  clear: right;
 }
 
 .opened-item-info {
-    width: 225%;
-    text-align: center;
-    border-right: 0.15rem solid white;
-    border-left: 0.15rem solid white;
-    border-bottom: 0.12rem solid white;    
-    /* font-synthesis: bold; */
+  font-size: 100%;
+  color: black;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-family: 'Cambria';
+}
+
+.playist {
+  width: 100%;
+  height: inherit;
+  overflow: scroll;
+}
+
+.playlist-title-h1 {
+  text-align: center;
+  font-family: 'Cambria';
+}
+
+.btn {
+  height: 100%;
+  width: 48%
+}
+
+.playlist-thumbnail{
+  height: 60%;
 }
