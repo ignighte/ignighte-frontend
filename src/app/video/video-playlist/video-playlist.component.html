@@ -21,10 +21,8 @@
 
   <!--Song layout end-->
   <div class="playist-item-empty" *ngIf="!videoPlaylist.length">
-    <div class="playlist-thumbnail" [ngStyle]="{'background': '#000'}">
-      <i class="material-icons">block</i>
-    </div>
-    <div class="opened-item-info" [ngClass]="{'closed': !playlistToggle}" *ngIf="playlistNames">
+    <div class="empty-list">
+      <i class="material-icons block-icon">block</i>
       Playlist is empty
     </div>
   </div>
