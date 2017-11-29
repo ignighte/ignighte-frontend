@@ -3,36 +3,33 @@ i {
     vertical-align: middle;
 }
 
-.return-home {
-    /* margin-left: 1rem; */
-    float:right;
-}
 
 .submit {
-    max-width: 2rem;
-}
-
-.material-icons {
-    /* max-width: 2rem; */
-    /* margin-left: 1rem; */
+  max-width: 2rem;
+  float: left;
 }
 
 .mdl-textfield__input {
-    max-width: 60%;
-    float: left;
-    margin-right: 2%;
-    font-family: 'Cambria';
+  max-width: 80%;
+  float: left;
+  margin-right: 2%;
+  font-family: 'Cambria';
+  background: linear-gradient(to bottom right, black , darkgrey);
 }
 
 .mdl-textfield__label {
-    width: 2.75rem;
-    /* float:left; */
+  width: 2.75rem;
 }
 
 .search-video-title-header {
-    font-family: 'Cambria';
+  font-family: 'Cambria';
+  text-align: center;
 }
 
-.search-bar-field {
-    /* margin-bottom: 5rem; */
+.search-button {
+  width: 8%;
+}
+
+.return-home {
+  float: right;
 }

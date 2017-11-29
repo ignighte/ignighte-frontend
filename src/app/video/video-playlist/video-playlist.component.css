@@ -1,31 +1,75 @@
-.full-playlist-page {
-    /* border-left: 0.1rem solid white; */
-    /* float: right; */
-    /* font-synthesis: bold; */
-    /* max-height: 100%; */
-    /* overflow: scroll; */
+.full-song-info {
+  width: 100%;
 }
 
-.playlist-title-h2 {
-    font-family: 'Times New Roman';
-    /* overflow:scroll; */
+.holder {
+  height: 75px;
+  margin: 1rem;
+  border: 1px solid white;
+  background: linear-gradient(to bottom right, black , darkgrey);
 }
 
-.playlist-thumbnail {
-    width: 225%;
-    font-size: 150%;
-    border-top: 0.12rem solid white;
-    border-right: 0.15rem solid white;
-    border-left: 0.15rem solid white;
-    
-    /* font-synthesis: bold; */
+.buttons {
+  float: left;
+  width: 25%;
+  height: 100%;
+}
+
+.song-thumbnail {
+  width: 74%;
+  height: 100%;
+  float: right;
+  clear: right;
 }
 
 .opened-item-info {
-    width: 225%;
-    text-align: center;
-    border-right: 0.15rem solid white;
-    border-left: 0.15rem solid white;
-    border-bottom: 0.12rem solid white;    
-    /* font-synthesis: bold; */
+  font-size: 100%;
+  color: black;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-family: 'Cambria';
+}
+
+.playist {
+  width: 100%;
+  height: inherit;
+  overflow: scroll;
+}
+
+.playlist-title-h1 {
+  text-align: center;
+  color: #131416;
+  font-family: 'Cambria';
+  background: linear-gradient(to bottom right, black , darkgrey);
+  border-bottom: 1px solid white;
+}
+
+.playlist-thumbnail {
+  background: linear-gradient(to bottom right, black , darkgrey);
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  height: 60%;
+  font-family: 'Cambria';
+}
+
+.btn {
+  height: 100%;
+  width: 48%
+}
+
+.empty-list{
+  margin: 1em;
+  font-size: 150%;
+  text-align: center;
+  background: linear-gradient(to bottom right, black , darkgrey);
+  border: 1px solid white;
+}
+
+.no-in-playlist {
+  padding-left: 2%;
+  font-size: 150%;
+}
+
+.delete-from-playlist{
+  float: right;
 }

@@ -1,41 +1,29 @@
-<div class = "full-playlist-page">
-  <h2 class="playlist-title-h2"> Playlist </h2>
-  <div id="playlist" class="playlist" [ngClass]="{'opened': playlistToggle}">
-  
-    <div class="playlist-tab-list" *ngFor="let video of videoPlaylist; let i = index;"
-          id="{{video.id}}"
-          class="playist-item"
-          (click)="play(video.id)"
-          [ngClass]="{'playing': currentPlaying(video.id)}">
-  
-      <div class="playlist-thumbnail"
-            [ngStyle]="{'background': '#000 url(' + video.snippet.thumbnails.default.url + ') center center no-repeat', 'background-size': '100%'}">
-        <span class="no-in-playlist">{{ i + 1 }}</span>
-        <a><i class="material-icons delete-from-playlist" (click)="removeFromPlaylist(video)">cancel</i></a>
+<h1 class="playlist-title-h1">Playlist</h1>
+<div class="playlist" [ngClass]="{'opened': playlistToggle}">
+  <!--Song layout-->
+  <div class="full-song-info">
+    <div class="playlist-tab-list" *ngFor="let video of videoPlaylist; let i = index;" id="{{video.id}}" class="playist-item" (click)="play(video.id)" [ngClass]="{'playing': currentPlaying(video.id)}">
+      <div class="holder">
+        <div class="buttons">
+          <button type="button" class="btn btn-success btn-sm">↑</button>
+          <button type="button" class="btn btn-danger btn-sm">↓</button>
+        </div>
+        <div class="song-thumbnail">
+          <div class="playlist-thumbnail" [ngStyle]="{'background': '#000 url(' + video.snippet.thumbnails.default.url + ') center center no-repeat', 'background-size': '100%'}">
+            <span class="no-in-playlist">{{ i + 1 }}</span>
+            <a><i class="material-icons delete-from-playlist" (click)="removeFromPlaylist(video)">cancel</i></a>
+          </div>
+          <div class="opened-item-info">{{ video.snippet.title | nowPlaying }}</div>
+        </div>
       </div>
+    </div>
+  </div>
 
-      <!-- display the name of the song instead of photo -->
-    <!-- <div class="playlist-thumbnail"> -->
-          <!-- [ngStyle]="{'background': '#000 url(' + video.snippet.thumbnails.default.url + ') center center no-repeat', 'background-size': '100%'}"> -->
-        <!-- {{video.snippet.title| nowPlaying}} -->
-      <!-- <span class="empty-playlist">{{ i + 1 }}</span> -->
-      <!-- delete Video on playlist -->
-      <!-- <i class="material-icons delete-from-playlist" (click)="removeFromPlaylist(video)">cancel</i> -->
-    <!-- </div> -->
-  
-  
-      <div class="opened-item-info" [ngClass]="{'closed': !playlistToggle}" *ngIf="playlistNames">
-        {{ video.snippet.title | nowPlaying }}
-      </div>
+  <!--Song layout end-->
+  <div class="playist-item-empty" *ngIf="!videoPlaylist.length">
+    <div class="empty-list">
+      <i class="material-icons block-icon">block</i>
+      Playlist is empty
     </div>
-  
-    <div class="playist-item-empty" *ngIf="!videoPlaylist.length">
-      <div class="playlist-thumbnail" [ngStyle]="{'background': '#000'}">
-        <i class="material-icons">block</i>
-      </div>
-      <div class="opened-item-info" [ngClass]="{'closed': !playlistToggle}" *ngIf="playlistNames">
-        Playlist is empty
-      </div>
-    </div>
-  </div>    
+  </div>
 </div>

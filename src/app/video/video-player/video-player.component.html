@@ -6,7 +6,7 @@
     <div class="player-controls-block">
       <!-- <div class="current-playing-text" *ngIf="superMinPlayer"> -->
       <!-- Always display What's playing -->
-      <!-- <div class="current-playing-text">              
+      <!-- <div class="current-playing-text">
         <span class="now-playing-label">Now playing: </span>
         <span>{{ currentVideoText | nowPlaying }}</span>
       </div> -->
@@ -22,140 +22,51 @@
           <!-- <i class="material-icons" *ngIf="superMinPlayer" (click)="minimizePlayer()">zoom_out_map</i> -->
           <div class="actual-player" id="yt-player">
           <!-- Always display What's playing -->
+
           </div>
         </div>
       </div>
 
-      <div class="current-playing-text">              
+      <div class="current-playing-text">
           <span class="now-playing-label">Now playing : {{ currentVideoText | nowPlaying }}</span>
       </div>
 
       <!-- Buttons for Playlist interaction -->
-      <!-- TODO: Build this into a Single Nav Bar Beneath the Video Player -->
       <nav class = "video-player-navbar">
-          <!-- <span> -->
-            <!-- <button id="fullscreen_tip"
-                    [ngClass]="{'active': fullscreenActive}" (click)="toggleFullscreen()">
-              <i class="material-icons">zoom_out_map</i>
-              <h6>full</h6>
-            </button> -->
-          <!-- </span>   -->
-  
-          <button id="prev_tip" (click)="prevVideo()">
+          <button class="youtube-button" id="prev_tip" (click)="prevVideo()">
             <i class="material-icons">skip_previous</i>
             <h6>previous</h6>
           </button>
-    
-          <button (click)="playPause('play')" *ngIf="playingEvent === 'pause'">
+
+          <button class="youtube-button" (click)="playPause('play')" *ngIf="playingEvent === 'pause'">
             <i class="material-icons">play_circle_filled</i>
             <h6>play</h6>
           </button>
-    
-          <button (click)="playPause('pause')" *ngIf="playingEvent === 'play'">
+
+          <button class="youtube-button" (click)="playPause('pause')" *ngIf="playingEvent === 'play'">
             <i class="material-icons">pause_circle_filled</i>
             <h6>pause</h6>
-          </button>  
-          
-          <button id="next_tip" (click)="nextVideo()">
+          </button>
+
+          <button class="youtube-button" id="next_tip" (click)="nextVideo()">
             <i class="material-icons">skip_next</i>
             <h6>next</h6>
           </button>
 
           <!-- <span class="repeat-shuffle-block"> -->
-    
-            <button id="repeat_tip" [ngClass]="{'active': repeat}"
+
+            <button class="youtube-button" id="repeat_tip" [ngClass]="{'active': repeat}"
                     (click)="toggleRepeat()">
               <i class="rpt-btn" class="material-icons">repeat_one</i>
               <h6>repeat</h6>
             </button>
 
-            <button id="shuffle_tip" [ngClass]="{'active': shuffle}"
+            <button class="youtube-button" id="shuffle_tip" [ngClass]="{'active': shuffle}"
               (click)="toggleShuffle()">
               <i class="material-icons">shuffle</i>
               <h6>shuffle</h6>
             </button>
-          <!-- </span> -->
         </nav>
 
-    </div>      
-
-        <!-- Remove material design to override with css -->
-      <!-- <span class="mute-block">
-        <button id="fullscreen_tip" class="mdl-button mdl-js-button mdl-button--icon col-md-1"
-                [ngClass]="{'active': fullscreenActive}" (click)="toggleFullscreen()">
-          <i class="material-icons">fullscreen</i>
-        </button>
-
-        <div class="mdl-tooltip mdl-tooltip--top col-md-1" data-mdl-for="fullscreen_tip">
-          Fullscreen
-        </div>
-      </span> -->  
-
-      <!-- <button id="prev_tip" class="mdl-button mdl-js-button mdl-button--icon prev col-md-1" (click)="prevVideo()">
-          <i class="material-icons">skip_previous</i>
-      </button> -->
-
-      <!-- <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="prev_tip">
-          Previous
-      </div> -->
-
-      <!-- <button class="mdl-button mdl-js-button mdl-button--icon play col-md-1" (click)="playPause('play')" *ngIf="playingEvent === 'pause'">
-          <i class="material-icons">play_circle_filled</i>
-      </button> -->
-
-      <!-- <button class="mdl-button mdl-js-button mdl-button--icon play col-md-1" (click)="playPause('pause')" *ngIf="playingEvent === 'play'">
-          <i class="material-icons">pause_circle_filled</i>
-      </button> -->
-
-      <!-- <button id="next_tip" class="mdl-button mdl-js-button mdl-button--icon next col-md-1" (click)="nextVideo()">
-        <i class="material-icons">skip_next</i>
-      </button> -->
-
-      <!-- <div class="mdl-tooltip mdl-tooltip--top col-md-1" data-mdl-for="next_tip">
-        Next
-      </div>       -->
-
-
-        <!-- <button id="repeat_tip" class="mdl-button mdl-js-button mdl-button--icon" [ngClass]="{'active': repeat}"
-                (click)="toggleRepeat()">
-          <i class="material-icons">repeat_one</i>
-        </button> -->
-
-        <!-- <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="repeat_tip">
-          Repeat This Song
-        </div> -->
-
-
-        <!-- <button id="shuffle_tip" class="mdl-button mdl-js-button mdl-button--icon" [ngClass]="{'active': shuffle}"
-              (click)="toggleShuffle()">
-          <i class="material-icons">shuffle</i>
-        </button> -->
-
-
-
-        <!-- <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="shuffle_tip">
-          Shuffle
-        </div>         -->
-        
-
-
-<!-- Player Container was here -->
-
-  
-    <!-- <button id="demo-menu-top-right" (click)="openClosedPlaylist()">
-      <i class="material-icons">more_vert</i>
-    </button> -->
-
-    <!-- <button id="demo-menu-top-right" class="mdl-button mdl-js-button mdl-button--icon playlist-drop-button" (click)="openClosedPlaylist()">
-      <i class="material-icons">more_vert</i>
-    </button> -->
-      
-
-    <!-- <ul class="mdl-menu mdl-menu--top-right mdl-js-menu" data-mdl-for="demo-menu-top-right">
-      <li class="mdl-menu__item" (click)="exportPlaylistAction()">Export playlist</li>
-      <li class="mdl-menu__item" (click)="importPlaylistAction()">Import playlist</li>
-      <li class="mdl-menu__item mdl-menu__item--full-bleed-divider" (click)="clearPlaylistAction()">Clear playlist</li>
-      <li class="mdl-menu__item" (click)="toggleNotifications()" [ngStyle]="{'color': !notifications ? 'rgb(186, 52, 54)': 'rgb(53, 132, 39)' }">Notifications</li>
-    </ul> -->
-    <!-- <input id="import_button" style="display: none;" type="file" name="file" accept=".json, .txt" (change)="handleInputChange($event)"> -->
+    </div>
   </div>

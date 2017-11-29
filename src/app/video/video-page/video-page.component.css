@@ -1,32 +1,6 @@
-/* These are material design css. Changed to normal css */
-
-html, body {
-  /* margin: 0.2rem, 0.2rem,0.2rem,0.2rem; */
-  /* padding: 0; */
-}
-
-.top-of-page {
-  margin-top: 2rem;
-}
-
-.under-the-search-bar {
-  margin-top: 5rem;
-}
-
 .boxed-result-header {
-  /* margin-top:5rem; */
-  float: right;
-  width: 38rem;
-  border: 0.1rem solid white;
-  margin: 0.2rem, 0.2rem, 0.2rem, 0.2rem;
-  text-align: center;
-  font-family: 'Cambria';
-}
-
-.boxed-player-header {
-  float: left;
-  width: 27.8rem;
-  border: 0.1rem solid white;
+  width: 100%;
+  border-bottom: 0.1rem solid white;
   margin: 0.2rem, 0.2rem, 0.2rem, 0.2rem;
   text-align: center;
   font-family: 'Cambria';
@@ -34,124 +8,54 @@ html, body {
 
 .vid-results {
   border: 0.1rem solid white;
-  /* margin: 0.1rem, 0.1rem, 0.1rem, 0.1rem; */
   text-align: center;
-  height: 20rem;
-  width: 38rem;
-  overflow: auto;
-  float: right;
-  /* padding-top: 10rem; */
-}
-
-/* .currently-playing-text {
+  height: 14rem;
   width: 100%;
-} */
-
-#playlist-tab {
-  border-left: 0.1rem solid white;
-  /* min-height: 100%; */
-  /* max-width: 100%; */
-  /* max-height: 100%; */
-  /* overflow: auto; */
-}
-
-#playlist-icon-i{
-  float:left;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-#playlist-icon-t {
-  float:right;
-  margin-top: 0.4rem;
-}
-
-#playlist-tab-d {
-  /* max-height: 100%; */
-  /* overflow: scroll; */
+  overflow: auto;
 }
 
 .now-playing-label {
   font-size: 150%;
 }
 
-/* .search-result {
-  display: inline-block;
-} */
+.search-bar-container {
+  width: 60%;
+}
+
+.video-player-container {
+  width: 100%;
+}
+
+.vid-search {
+  width: 100%;
+}
+
+.fit {
+  width: 100%;
+}
+
+.vid-playlist {
+  border-left: 0.1rem solid white;
+  border-right: 0.1rem solid white;
+  border-bottom: 0.1rem solid white;
+  height: 40.5rem;
+  width: 100%;
+  overflow: auto;
+}
+
+.underline {
+  border-top: 0.1rem solid white;
+}
+
+.shrink-fit{
+  padding-left: 2%;
+  padding-right: 2%;
+}
 
 .indiv-search {
-  /* max-width: 30rem;
-  float: right; */
-  /* align-items: left; */
-  /* float: right;   */
+  background: linear-gradient(to right, black , darkgrey);
 }
 
-.in-yt-player {
-  float:left;
-  /* float:top; */
-  /* padding-top: 10rem; */
-  /* position:fixed; */
-  /* right:1; */
+#header {
+  align-content: center;
 }
-
-/* .mdl-navigation {
-  width: 10rem;
-}
-
-.mdl-layout-title {
-  margin-right: 10rem 10rem 10rem 10rem;
-}
-
-.mdl-layout-title>img {
-  height: 100%;
-}
-
-.mdl-layout__header {
-  height: 64px;
-  background-color: rgb(79, 111, 144);
-}
-
-.mdl-layout__content {
-  width: 95%;
-}
-
-.mdl-layout__header-row {
-  padding: 0 40px 0 16px;
-}
-
-.mdl-layout__drawer-button {
-  right: 0;
-  left: inherit;
-}
-
-.blur-main-playlist-opened {
-  opacity: 0.4;
-  transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-
-.mdl-js-snackbar {
-  bottom: 0;
-  z-index: 999;
-  right: 0;
-  background-color: rgba(196, 48, 43, 0.85);
-}
-
-@media () {
-  .mdl-layout-title>img {
-    height: 30px;
-  }
-}
-
-@media () {
-  .mdl-layout__content {
-    width: 100%;
-  }
-  .yt-player,
-  .ytp-cued-thumbnail-overlay {
-    width: 100px;
-  }
-} */
