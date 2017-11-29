@@ -1,7 +1,40 @@
-.bread-crumb {
-    margin-top : 3rem;
+.top-line {
+   border-top: 1px solid white;
+   margin-left: 10%;
+   margin-right: 10%;
+ }
+
+h1, h3, btn {
+  font-family: 'Cambria';
+  text-align: center;
 }
 
-.btn-light {
-  background-color: white;
+.playlists {
+  margin-left: 25%;
+  margin-right: 25%;
+  border: 1px solid white;
+  background: linear-gradient(to right, black , darkgrey);
+  height: 30rem;
+  min-width: 50%;
+}
+
+.spacing {
+  width: 100%;
+  padding-left: 3%;
+}
+
+hr {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 1%;
+}
+
+.btn {
+  max-width: 24%;
+  min-width: 24%;
+  overflow-x: scroll;
+}
+
+.home {
+  margin-left: 45%;
 }
