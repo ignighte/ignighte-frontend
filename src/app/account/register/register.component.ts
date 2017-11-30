@@ -1,66 +1,110 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { RegisterService } from '../../service/register.service';
+import { NgModel } from '@angular/forms';
+import { EmailValidator } from '@angular/forms';
+
+// const url = `https://localhost:4200/register`;
+const url = `http://54.68.90.169:8080/register`;
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
-  providers: [RegisterService]
+  styleUrls: ['./register.component.css']
 })
 
+export class RegisterComponent {
 
+  // Set all inputs to empty string literal
+  username = '';
+  email  = '';
+  password = '';
+  passwordcheck = '';
 
-export class RegisterComponent implements OnInit {
-
-// initialize fields
-username = '';
-password = '';
-passwordCheck = '';
-message = '';
-
-  constructor(private regService: RegisterService) { }
-
-  ngOnInit() {
-  }
+  constructor(private router: Router, private http: HttpClient) { }
 
   register() {
-    if (this.username.trim() === '') {
-      this.message = 'Username is a Required Field';
-      return;
-    }
 
-    if (this.password.trim() === '') {
-      this.message = 'Password is a Required Field';
-      return;
-    }
+    // proceed after passwordcheck
+    // if (this.password !== this.passwordcheck) {
+    //     alert('Your passwords must match');
+    //     return;
+    //   }
 
-    if (this.passwordCheck.trim() !== this.password.trim()) {
-      this.message = 'Your Password does not match';
-      return;
-    }
-
-    let user = {
+    // save the response body
+    let resBody = {
       username: this.username,
-      password: this.password
-    };
+      email: this.email,
+      password: this.password };
 
-    this.regService.checkExistingUser(user)
-      .then(result => {
-        if (result.exist === 'exist') {
-          this.message = 'The username or email is already registered. Please edit the information and try again.'
-        } else {
-          this.message = '';
-          let body = {
-            username: this.username,
-            password: this.password
-          };
-          this.regService.register(body)
-            .then(result => {
-              this.message = result.message;
-            });
-        }
-      });
+      // write to db
+      this.http.post(url, resBody).subscribe((response) => {
+        this.router.navigate(['/login']);
+      }, (error) => {console.log(error)});
   }
-
 }
+
+// import { Component, OnInit} from '@angular/core';
+// import { Router } from '@angular/router';
+// import { HttpClient } from '@angular/common/http';
+// // import { AccountService } from '../../service/account.service';
+// import { RegisterService } from '../../service/register.service';
+
+
+// private info: any;
+// private loading = false;
+
+// // clear all inputs at constructor
+// constructor(private router: Router, private reg: RegisterService) {
+//   this.info = {
+//     username: '',
+//     password: '',
+//     email: ''
+//   };
+//   this.loading = false;
+// }
+
+// register() {
+//   this.reg.register(this.info)
+//     .subscribe(result => {
+//       if (result === true) {
+//         this.router.navigate(['/login']);
+//       } else {
+//         console.log('error');
+//       }
+//     });
+//  }
+
+// ngOnInit() {
+// }
+
+
+// --------------------------
+
+// import { Component, OnInit } from '@angular/core';
+// import { HttpErrorResponse } from '@angular/common/http';
+// import { Router } from '@angular/router';
+
+// import { User } from '../../model/index';
+// import { AuthenticationService } from '../../service/authentication.service';
+
+// register() {
+//   // password check mechanism
+//   if (this.newAccount.password === this.passwordcheck) {
+//     this.auth.register(this.newAccount)
+//       .subscribe( res => {
+//         if (res.status === 200) {
+//           // set the authentication token
+//           localStorage.setItem( this.auth.getJWT(JSON.stringify({user: this.newAccount.username}));
+//           this.newAccount = new User();
+//           this.router.navigate(['/landing']);
+//         } else {
+//           console.log('Failed to Register');
+//         }
+//       });
+
+//   } else {
+//     console.log('passwords must match');
+//   }
+
+// }

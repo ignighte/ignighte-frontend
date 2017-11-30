@@ -11,7 +11,6 @@ import { RegisterComponent } from './account/register/register.component';
 import { SearchSongComponent } from './page/search-song/search-song.component';
 import { AddVideoComponent } from './page/add-video/add-video.component';
 import { AddPlaylistComponent } from './page/add-playlist/add-playlist.component';
-import { ViewPlaylistComponent } from './page/view-playlist/view-playlist.component';
 import { ViewVideoComponent } from './page/view-video/view-video.component';
 
 // Test These
@@ -20,6 +19,7 @@ import { SearchResultComponent } from './video/search-result/search-result.compo
 import { VideoPlayerComponent } from './video/video-player/video-player.component';
 import { VideoPlaylistComponent } from './video/video-playlist/video-playlist.component';
 import { VideoPageComponent } from './video/video-page/video-page.component';
+import { ViewPlaylistComponent } from './page/view-playlist/view-playlist.component';
 
 // Routing
 const routes: Routes = [
@@ -40,7 +40,6 @@ const routes: Routes = [
   { path: 'video-player', component: VideoPlayerComponent },
   { path: 'video-playlist', component: VideoPlaylistComponent },
   { path: 'video-page', component: VideoPageComponent },
-
 
 ];
 

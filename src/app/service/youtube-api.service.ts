@@ -17,7 +17,7 @@ export class YoutubeApiService {
   // Just Top 10 for now. Change it once we have
   // 1. overflow Scroll [o] implemented
   // 2. Or add in the max_result by themselves on screen.
-  max_results = 50;
+  max_results = 1;
 
   public nextToken: string;
   public lastQuery: string;
@@ -80,6 +80,7 @@ export class YoutubeApiService {
 
     return this.http.get(url)
       .map(results => {
+        console.log(results.json()['items']);
         return results.json()['items'];
       })
       .toPromise()
