@@ -7,8 +7,19 @@ import { Routes, RouterModule } from '@angular/router';
 import { Location } from '@angular/common';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
+// fakebackend
+import { fakeBackendProvider } from './_helpers/fake-backend';
+import { MockBackend, MockConnection } from '@angular/http/testing';
+import { BaseRequestOptions } from '@angular/http';
+
 // internal module
 import { AppRoutingModule } from './app-routing.module';
+
+// Services
+import { RegisterService } from './service/register.service';
+import { AuthenticationService } from './service/authentication.service';
+import { AccountService } from './service/account.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 // internal components
 import { AppComponent } from './app.component';
@@ -33,6 +44,7 @@ import { PlaylistStoreService } from './service/playlist-store.service';
 import { NotificationService } from './service/notification.service';
 import { BrowserNotificationService } from './service/browser-notification.service';
 import { VideoPageComponent } from './video/video-page/video-page.component';
+import { NoAuthComponent } from './page/no-auth/no-auth.component';
 
 
 @NgModule({
@@ -56,12 +68,14 @@ import { VideoPageComponent } from './video/video-page/video-page.component';
     VideoPlayerComponent,
     VideoPlaylistComponent,
     VideoSearchComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    NoAuthComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     ReactiveFormsModule,
     // RouterModule.forRoot(routes),
     AppRoutingModule
@@ -72,7 +86,16 @@ import { VideoPageComponent } from './video/video-page/video-page.component';
     YoutubePlayerService,
     PlaylistStoreService,
     NotificationService,
-    BrowserNotificationService
+    BrowserNotificationService,
+    RegisterService,
+    AuthenticationService,
+    AccountService,
+    HttpClient,
+
+    // providers used to create fake backend
+    fakeBackendProvider,
+    MockBackend,
+    BaseRequestOptions
   ],
   bootstrap: [AppComponent]
 })

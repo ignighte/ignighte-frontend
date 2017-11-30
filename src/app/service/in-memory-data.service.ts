@@ -25,19 +25,19 @@ export class IgnighteDB implements InMemoryDbService {
         }
     ];
 
-    const playlists = [
-        {
-            playlistName: 'K-pop before Gangnam Style',
-            isPrivate: false,
-            passcode: ''
-        },
-        {
-            playlistName: 'Only Vietnamese Songs I know',
-            isPrivate: true,
-            passcode: 'Những Trò Chơi Tuổi Thơ'
-        }
-    ];
+    // const playlists = [
+    //     {
+    //         playlistName: 'K-pop before Gangnam Style',
+    //         isPrivate: false,
+    //         passcode: ''
+    //     },
+    //     {
+    //         playlistName: 'Only Vietnamese Songs I know',
+    //         isPrivate: true,
+    //         passcode: 'Những Trò Chơi Tuổi Thơ'
+    //     }
+    // ];
 
-    return {users, playlists};
+    return {users};
     }
 }
