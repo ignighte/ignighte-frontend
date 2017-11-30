@@ -37,7 +37,6 @@ export class SeePlaylistComponent implements AfterViewInit {
     // AfterViewInit
     ngAfterViewInit() {
       this.playlistElement = document.getElementById('playlist');
-      this.youtubePlayer.resizePlayer(500, 500);
     }
   
     // use playlist to start playing the video
