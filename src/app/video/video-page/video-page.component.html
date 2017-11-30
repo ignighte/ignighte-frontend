@@ -21,7 +21,7 @@
       </nav>
       <!--search results-->
       <div class = "vid-results">
-        <h1 class="boxed-result-header">Search Result</h1>
+        <h2 class="boxed-result-header">Search Result</h2>
         <div class = "indiv-search">
           <app-search-result *ngIf="videoList.length" (videoPlaylist)="checkAddToPlaylist($event)" [videoList]="videoList" [loadingInProgress]="loadingInProgress"></app-search-result>
         </div>

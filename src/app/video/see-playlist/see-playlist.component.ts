@@ -4,6 +4,9 @@ import { YoutubePlayerService } from '../../service/youtube-player.service';
 import { PlaylistStoreService } from '../../service/playlist-store.service';
 import { NotificationService } from '../../service/notification.service';
 import { Http, Headers, Response  } from '@angular/http';
+import { RouterLink } from '@angular/router';
+
+  const posturl = 'http://54.68.90.169:8080/playlist';
 
 @Component({
   selector: 'app-see-playlist',
@@ -203,8 +206,7 @@ export class SeePlaylistComponent implements AfterViewInit {
       // save this data with name and send to backend
       return this.http.post(posturl, JSON.stringify(this.videoPlaylist))
         .map(response => response.json());
-  
-  
+
       // let a = document.createElement('a');
       // let file = new Blob([data], { type: 'text/json' });
       // a.href = URL.createObjectURL(file);

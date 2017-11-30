@@ -45,6 +45,7 @@ import { NotificationService } from './service/notification.service';
 import { BrowserNotificationService } from './service/browser-notification.service';
 import { VideoPageComponent } from './video/video-page/video-page.component';
 import { NoAuthComponent } from './page/no-auth/no-auth.component';
+import { SeePlaylistComponent } from './video/see-playlist/see-playlist.component';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { NoAuthComponent } from './page/no-auth/no-auth.component';
     VideoPlaylistComponent,
     VideoSearchComponent,
     SearchResultComponent,
-    NoAuthComponent
+    NoAuthComponent,
+    SeePlaylistComponent
   ],
   imports: [
     BrowserModule,

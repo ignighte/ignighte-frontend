@@ -1,3 +1,9 @@
+<header id="header">
+  <div class="logo">
+    <span class="icon fa-fire"></span>
+  </div>
+  <div class="content"></div>
+</header>
 <div class="row underline">
     <div class="col col-md-5 shrink-fit">
       <!--Playlist container-->
@@ -5,10 +11,16 @@
           <div id="playlist-tab-d" class ="vid-playlist">
             <app-video-playlist [repeat]="repeat" [shuffle]="shuffle" [playlistToggle]="playlistToggle" [playlistNames]="playlistNames" [videoPlaylist]="videoPlaylist"></app-video-playlist>
           </div>
+            <button class="home-btn" id="home-tip">
+              <a routerLink="/home"><i class="home-btn" class="material-icons">home</i> Back Home</a>
+            </button>
+            <button class="plus-btn" id="create-playlist">
+              <a routerLink="/video-page"><i class="home-btn" class="material-icons">add</i> Create Another Playlist</a>
+            </button>
       </div>
     </div>
-    <div class="col col-md-7 shrink-fit">
 
+    <div class="col col-md-7 shrink-fit">
       <!--Video player-->
       <div class="video-player-container">
         <div class="in-yt-player">

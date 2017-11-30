@@ -7,18 +7,16 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-  constructor(private auth: AuthenticationService, private router: Router) {
+  constructor(private router: Router) {
 
   }
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    if (this.auth.getLoggedIn()){
+  canActivate() {
+    var jwt = localStorage.getItem('token');
+    if (jwt) {
       return true;
-    }
-    else {
-      this.router.navigateByUrl('/login');
+    } else {
+      alert('you are not logged in');
+      this.router.navigate(['/login']);
       return false;
     }
-  }
 }

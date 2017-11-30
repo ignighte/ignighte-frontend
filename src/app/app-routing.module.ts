@@ -20,6 +20,7 @@ import { VideoPlayerComponent } from './video/video-player/video-player.componen
 import { VideoPlaylistComponent } from './video/video-playlist/video-playlist.component';
 import { VideoPageComponent } from './video/video-page/video-page.component';
 import { ViewPlaylistComponent } from './page/view-playlist/view-playlist.component';
+import { SeePlaylistComponent } from './video/see-playlist/see-playlist.component';
 
 // Routing
 const routes: Routes = [
@@ -40,6 +41,7 @@ const routes: Routes = [
   { path: 'video-player', component: VideoPlayerComponent },
   { path: 'video-playlist', component: VideoPlaylistComponent },
   { path: 'video-page', component: VideoPageComponent },
+  { path: 'see-playlist', component: SeePlaylistComponent },
 
 ];
 
