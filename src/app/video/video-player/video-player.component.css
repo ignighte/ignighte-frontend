@@ -1,5 +1,10 @@
 .youtube-button{
     width: 19.5%;
+    margin-bottom: 1.5rem;
+}
+
+.youtube-button-2{
+    width: 32.75%;
 }
 
 .video-player-navbar {

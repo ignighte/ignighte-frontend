@@ -123,6 +123,7 @@ export class VideoPlayerComponent implements AfterContentInit {
 
   // temp function for importing JSON
   handleInputChange(e: any): void {
+    console.log('begining of file');
     let file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
 
     if (file.name.split('.').pop() !== 'json') {
@@ -130,12 +131,14 @@ export class VideoPlayerComponent implements AfterContentInit {
       return;
     }
 
+    console.log('at reader');
     let reader = new FileReader();
     let me = this;
 
     reader.readAsText(file);
     reader.onload = function (ev) {
       let list;
+      console.log('loaded');      
       try {
         list = JSON.parse(ev.target['result']);
       } catch (exc) {
