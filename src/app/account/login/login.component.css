@@ -1,3 +1,15 @@
-.top-page {
-    margin-top: 5rem;
+.form-control{
+  background: linear-gradient(to right, black , darkgrey);
+}
+
+.top-line {
+   border-top: 1px solid white;
+ }
+
+h1 {
+    font-family: 'Cambria';
+}
+
+.body {
+  padding-top: 1%;
 }
