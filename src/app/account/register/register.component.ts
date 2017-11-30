@@ -25,12 +25,6 @@ export class RegisterComponent {
 
   register() {
 
-    // proceed after passwordcheck
-    // if (this.password !== this.passwordcheck) {
-    //     alert('Your passwords must match');
-    //     return;
-    //   }
-
     // save the response body
     let resBody = {
       username: this.username,

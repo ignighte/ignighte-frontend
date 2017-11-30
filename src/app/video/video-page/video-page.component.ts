@@ -3,10 +3,14 @@ import { YoutubeApiService } from '../../service/youtube-api.service';
 import { YoutubePlayerService } from '../../service/youtube-player.service';
 import { PlaylistStoreService } from '../../service/playlist-store.service';
 import { NotificationService } from '../../service/notification.service';
+import { Http, Headers, Response  } from '@angular/http';
 // import { SearchResultComponent } from '../search-result/search-result.component';
 // import { VideoPlayerComponent} from '../video-player/video-player.component';
 // import { VideoPlaylistComponent } from '../video-playlist/video-playlist.component';
 // import { VideoSearchComponent } from '../video-search/video-search.component';
+
+  // Temp for localhost
+  const posturl = 'http://54.68.90.169:8080/playlist';
 
 @Component({
   selector: 'app-video-page',
@@ -31,7 +35,8 @@ export class VideoPageComponent implements AfterViewInit {
     private youtubeService: YoutubeApiService,
     private youtubePlayer: YoutubePlayerService,
     private playlistService: PlaylistStoreService,
-    private notificationService: NotificationService
+    private notificationService: NotificationService,
+    private http: Http
   ) {
     this.videoPlaylist = this.playlistService.retrieveStorage().playlists;
   }
@@ -195,8 +200,29 @@ export class VideoPageComponent implements AfterViewInit {
     this.notificationService.showNotification('Playlist exported.');
   }
 
+  // save playlist -> for POST create-playlist
+  savePlaylist() {
+    if (this.videoPlaylist.length < 1) {
+      this.notificationService.showNotification('Playlist Empty.');
+      return;
+    }
+    // let data = JSON.stringify(this.videoPlaylist);
+    // save this data with name and send to backend
+    return this.http.post(posturl, JSON.stringify(this.videoPlaylist))
+      .map(response => response.json());
+
+
+    // let a = document.createElement('a');
+    // let file = new Blob([data], { type: 'text/json' });
+    // a.href = URL.createObjectURL(file);
+    // a.download = 'playlist.json';
+    // a.click();
+    // this.notificationService.showNotification('Playlist saved.');
+  }
+
   importPlaylist(playlist: any): void {
     this.videoPlaylist = playlist;
+    console.log('store-playlist');
     this.playlistService.importPlaylist(this.videoPlaylist);
   }
 }

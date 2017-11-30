@@ -34,6 +34,7 @@ export class PlaylistStoreService {
   // Import the JSON file
   public importPlaylist(videos: any): void {
     let store = this.parse();
+    console.log('store-playlist');
     store.playlists = videos;
     localStorage.setItem(this.vidPlayer, JSON.stringify(store));
   }
