@@ -1,11 +1,10 @@
-<!-- <br>
+<br>
 <header id="header">
   <div class="logo">
     <span class="icon fa-fire"></span>
   </div>
   <div class="content"></div>
-</header> -->
-<br>
+</header>
 <div class="row underline">
     <div class="col col-md-5 shrink-fit">
       <!--Playlist container-->
@@ -16,18 +15,7 @@
       </div>
     </div>
     <div class="col col-md-7 shrink-fit">
-      <!--Search bar-->
-      <nav class="vid-search">
-        <app-video-search (videosUpdated)="handleSearchVideo($event)" [loadingInProgress]="loadingInProgress"></app-video-search>
-      </nav>
-      <!--search results-->
-      <div class = "vid-results">
-        <h1 class="boxed-result-header">Search Result</h1>
-        <div class = "indiv-search">
-          <app-search-result *ngIf="videoList.length" (videoPlaylist)="checkAddToPlaylist($event)" [videoList]="videoList" [loadingInProgress]="loadingInProgress"></app-search-result>
-        </div>
-      </div>
-      <br>
+
       <!--Video player-->
       <div class="video-player-container">
         <div class="in-yt-player">
