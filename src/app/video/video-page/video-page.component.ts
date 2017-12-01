@@ -32,7 +32,6 @@ export class VideoPageComponent implements AfterViewInit {
     private playlistService: PlaylistStoreService,
     private http: Http
   ) {
-    this.videoPlaylist = this.playlistService.retrieveStorage().playlists;
   }
 
   // AfterViewInit
