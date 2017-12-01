@@ -5,9 +5,9 @@
     text-align: center;
     font-family: 'Cambria';
   }
-  
+
   .plus-btn {
-    
+
   }
 
   .vid-results {
@@ -17,27 +17,27 @@
     width: 100%;
     overflow: auto;
   }
-  
+
   .now-playing-label {
     font-size: 150%;
   }
-  
+
   .search-bar-container {
     width: 60%;
   }
-  
+
   .video-player-container {
     width: 100%;
   }
-  
+
   .vid-search {
     width: 100%;
   }
-  
+
   .fit {
     width: 100%;
   }
-  
+
   .vid-playlist {
     border-left: 0.1rem solid white;
     border-right: 0.1rem solid white;
@@ -46,7 +46,7 @@
     width: 100%;
     overflow: auto;
   }
-  
+
   /* .in-yt-player {
       height: 20rem;
   } */
@@ -54,17 +54,16 @@
   .underline {
     border-top: 0.1rem solid white;
   }
-  
+
   .shrink-fit{
     padding-left: 2%;
     padding-right: 2%;
   }
-  
+
   .indiv-search {
     background: linear-gradient(to right, black , darkgrey);
   }
-  
+
   #header {
     align-content: center;
   }
-  

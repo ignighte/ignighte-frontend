@@ -4,6 +4,7 @@
   margin: 0.2rem, 0.2rem, 0.2rem, 0.2rem;
   text-align: center;
   /* font-family: 'Cambria'; */
+  background: linear-gradient(to right, black , darkgrey);
 }
 
 .vid-results {
