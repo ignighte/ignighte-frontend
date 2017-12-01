@@ -22,19 +22,4 @@ export class ViewPlaylistComponent implements OnInit {
   ngOnInit() {
   }
 
-  // Getting One Playlist
-  // getPlaylistById() {
-  //   this.route.params
-  //   .subscribe((params: Params) => {
-  //   this.playlistId = +params['id'];
-  // });
-
-  // this.play.getPlaylistById(this.playlistId)
-  //   .subscribe(result => {
-  //     console.log(result);
-  //     this.userPlaylists = result;
-  //   });
-
-  }
-
 }
