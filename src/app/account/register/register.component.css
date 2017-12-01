@@ -16,3 +16,7 @@ label, h4 {
 .top-line {
    border-top: 1px solid white;
 }
+
+a {
+  text-decoration: none !important;
+}
