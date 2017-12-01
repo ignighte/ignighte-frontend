@@ -1,33 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 import { User } from '../model/index';
 
 @Injectable()
 export class AccountService {
 
-  constructor(private http: Http) {
+  private webUrl = 'http://54.68.90.169';
 
-    // getAllUser() {
-    //   return this.http.get('')
-    // }
+  constructor(private http: Http) { }
 
+  // [POST]'/changePassword'
+  changePassword(username: string, password: string, newPassword: string) {
+    console.log('before return', 'json: ', JSON.stringify({      username: username,
+      password: password,
+      newPassword: newPassword}));
+    return this.http.put('http://54.68.90.169/changePassword', JSON.stringify({
+      username: username,
+      password: password,
+      newPassword: newPassword
+    }))
+      .map(response => response.json());
   }
-
-  // // POST to '/register'
-  // register(user: User) {
-  //   return this.http.post('/register', user, this.jwt())
-  //     .map((response: Response) => response.json());
-  // }
-
-
-  // private jwt() {
-  //   // create authorization header with jwt token
-  //   let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-  //   if (currentUser && currentUser.token) {
-  //       let headers = new Headers({ 'Authorization': 'Bearer ' + currentUser.token });
-  //       return new RequestOptions({ headers: headers });
-  //   }
-// }
 
 }

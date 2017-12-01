@@ -19,9 +19,9 @@ export class AuthenticationService {
       .map((response: Response) => {
         // if successful, jwt response
         let user = response.json();
-        if (user) {
+        if (user && user.TOKEN) {
           // store jwt + user info in local
-          localStorage.setItem('currentUser', JSON.stringify(user));
+          // localStorage.setItem('currentUser', JSON.stringify(user.TOKEN));
         }
         return user;
       });
