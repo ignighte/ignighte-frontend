@@ -15,6 +15,7 @@ import { VideoPlayerComponent } from './video/video-player/video-player.componen
 import { VideoPlaylistComponent } from './video/video-playlist/video-playlist.component';
 import { VideoPageComponent } from './video/video-page/video-page.component';
 import { ViewPlaylistComponent } from './page/view-playlist/view-playlist.component';
+import { MyPlaylistComponent } from './page/my-playlist/my-playlist.component';
 
 // Routing
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'video-playlist', component: VideoPlaylistComponent },
   { path: 'video-page', component: VideoPageComponent },
   { path: 'view-playlist', component: ViewPlaylistComponent },
+  { path: 'my-playlist', component: MyPlaylistComponent },
   { path: '**', component: HomePageComponent}
 
 ];

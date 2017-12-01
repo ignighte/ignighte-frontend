@@ -37,6 +37,7 @@ import { VideoPageComponent } from './video/video-page/video-page.component';
 
 // import { SeePlaylistComponent } from './video/see-playlist/see-playlist.component';
 import { ProfileComponent } from './account/profile/profile.component';
+import { MyPlaylistComponent } from './page/my-playlist/my-playlist.component';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { ProfileComponent } from './account/profile/profile.component';
     VideoSearchComponent,
     SearchResultComponent,
     // SeePlaylistComponent,
-    ProfileComponent
+    ProfileComponent,
+    MyPlaylistComponent
   ],
   imports: [
     BrowserModule,
