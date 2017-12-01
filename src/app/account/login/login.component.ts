@@ -39,11 +39,11 @@ export class LoginComponent implements OnInit {
     this.auth.login(this.account.username, this.account.password)
       .subscribe(result => {
         if (result !== false) {
-          alert('successfully logged in');
+          alert('IGNIGHTION COMPLETE');
           localStorage.setItem('token', result.TOKEN);
           this.router.navigate(['/landing']);
         }}, (error => {
-        alert('account or password information is incorrect');
+        alert('IGNIGHTION UNSUCCESSFUL, REVIEW INPUT');
         this.loading = false;
       }));
   }
