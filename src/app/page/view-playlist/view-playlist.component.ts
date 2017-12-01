@@ -17,13 +17,13 @@ export class ViewPlaylistComponent implements OnInit {
   userPlaylists: Playlist;
   @Input() playlistId: number;
 
-  constructor(private http: Http, private play: PlaylistService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private http: Http, private route: ActivatedRoute, private router: Router) { }
 
   // *To Chris: Just move getAll the function OnInit
   ngOnInit() {
   }
 
-  // Getting One
+  // Getting One Playlist
   getPlaylistById() {
     this.route.params
     .subscribe((params: Params) => {

@@ -67,6 +67,7 @@ export class YoutubePlayerService {
 
   // util functions for video player
   playVideo(videoId: string, videoText?: string): void {
+    // deprecate function
     if (!this.yt_player) {
       this.notificationService.showNotification('Player not ready.');
       return;
@@ -74,6 +75,7 @@ export class YoutubePlayerService {
     this.yt_player.loadVideoById(videoId);
     this.currentVideoId = videoId;
     this.currentVideoText.emit(videoText);
+    // deprecate function
     this.browserNotification.show(videoText);
   }
 
@@ -89,6 +91,7 @@ export class YoutubePlayerService {
     return this.currentVideoId;
   }
 
+  // Deprecate function
   resizePlayer(width: number, height: number) {
     this.yt_player.setSize(width, height);
   }

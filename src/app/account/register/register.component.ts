@@ -36,6 +36,9 @@ export class RegisterComponent {
       this.http.post(url, resBody).subscribe((response) => {
         this.router.navigate(['/login']);
         alert('account created!');
-      }, (error) => {console.log(error)});
+      }, (error) => {
+        alert('username already exists!');
+        console.log(error);
+      });
   }
 }
