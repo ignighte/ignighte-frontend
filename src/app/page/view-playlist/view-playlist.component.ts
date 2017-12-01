@@ -23,7 +23,7 @@ export class ViewPlaylistComponent implements OnInit {
   ngOnInit() {
   }
 
-  // Getting One
+  // Getting One Playlist
   getPlaylistById() {
     this.route.params
     .subscribe((params: Params) => {

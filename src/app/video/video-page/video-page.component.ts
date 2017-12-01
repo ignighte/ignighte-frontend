@@ -2,7 +2,7 @@ import { Component, AfterViewInit } from '@angular/core';
 import { YoutubeApiService } from '../../service/youtube-api.service';
 import { YoutubePlayerService } from '../../service/youtube-player.service';
 import { PlaylistStoreService } from '../../service/playlist-store.service';
-import { NotificationService } from '../../service/notification.service';
+// import { NotificationService } from '../../service/notification.service';
 import { Http, Headers, Response  } from '@angular/http';
 // import { SearchResultComponent } from '../search-result/search-result.component';
 // import { VideoPlayerComponent} from '../video-player/video-player.component';
@@ -35,7 +35,7 @@ export class VideoPageComponent implements AfterViewInit {
     private youtubeService: YoutubeApiService,
     private youtubePlayer: YoutubePlayerService,
     private playlistService: PlaylistStoreService,
-    private notificationService: NotificationService,
+    // private notificationService: NotificationService,
     private http: Http
   ) {
     this.videoPlaylist = this.playlistService.retrieveStorage().playlists;
@@ -174,10 +174,10 @@ export class VideoPageComponent implements AfterViewInit {
   }
 
   // Playlist Bar Functionalities
-  closePlaylist(): void {
-    this.playlistToggle = false;
-    this.playlistNames = false;
-  }
+  // closePlaylist(): void {
+  //   this.playlistToggle = false;
+  //   this.playlistNames = false;
+  // }
 
   clearPlaylist(): void {
     this.videoPlaylist = [];

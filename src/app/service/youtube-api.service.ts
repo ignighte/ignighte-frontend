@@ -35,7 +35,9 @@ export class YoutubeApiService {
     return this.http.get(url)
       .map(response => {
         let jsonRes = response.json();
+        console.log('jsonRes: ', jsonRes);
         let res = jsonRes['items'];
+        console.log('res: ', res);
         this.lastQuery = query;
         this.nextToken = jsonRes['nextPageToken'] ? jsonRes['nextPageToken'] : undefined;
 
