@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { Login, User } from '../../model/index';
 import { AuthenticationService } from '../../service/authentication.service';
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private http: HttpClient,
-    private route: ActivatedRoute,
+    // private route: ActivatedRoute,
     private auth: AuthenticationService
   ) {
 
@@ -41,32 +41,14 @@ export class LoginComponent implements OnInit {
         if (result !== false) {
           alert('successfully logged in');
           localStorage.setItem('token', result.TOKEN);
-          this.router.navigate(['/home']);
+          this.router.navigate(['/landing']);
         }}, (error => {
         alert('account or password information is incorrect');
         this.loading = false;
       }));
   }
 
-  // login() {
-  //   this.http.post(url, {
-  //     'username': this.username,
-  //     'password': this.password
-  //   }).subscribe((response) => {
-  //     let user = response[0];
-  //     }, (error) => { alert('failed to login')
-  //     });
-  // }
+
 
 
 }
-
-  // onLogin(loginCredentials: Login) {
-  //   // this.authService.login (
-  //   //   loginCredentials.username,
-  //   //   loginCredentials.password
-  //   // );
-  // }
-
-  // ngOnInit() {
-  // }
