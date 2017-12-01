@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import { Params, Router, ActivatedRoute } from '@angular/router';
+
+import { PlaylistService } from '../../service/playlist.service';
+
+import { Playlist } from '../../model/playlist';
 
 @Component({
   selector: 'app-view-playlist',
@@ -7,9 +13,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewPlaylistComponent implements OnInit {
 
-  constructor() { }
+  allPlaylists: Playlist[] = [];
+  userPlaylists: Playlist;
+  @Input() playlistId: number;
 
+  constructor(private http: Http, private play: PlaylistService, private route: ActivatedRoute, private router: Router) { }
+
+  // *To Chris: Just move getAll the function OnInit
   ngOnInit() {
+  }
+
+  // Getting One
+  getPlaylistById() {
+    this.route.params
+    .subscribe((params: Params) => {
+    this.playlistId = +params['id'];
+  });
+
+  this.play.getPlaylistById(this.playlistId)
+    .subscribe(result => {
+      console.log(result);
+      this.userPlaylists = result;
+    });
+
   }
 
 }

@@ -23,6 +23,7 @@ export class RegisterComponent {
 
   constructor(private router: Router, private http: HttpClient) { }
 
+  // [POST] /register
   register() {
 
     // save the response body
@@ -38,68 +39,3 @@ export class RegisterComponent {
       }, (error) => {console.log(error)});
   }
 }
-
-// import { Component, OnInit} from '@angular/core';
-// import { Router } from '@angular/router';
-// import { HttpClient } from '@angular/common/http';
-// // import { AccountService } from '../../service/account.service';
-// import { RegisterService } from '../../service/register.service';
-
-
-// private info: any;
-// private loading = false;
-
-// // clear all inputs at constructor
-// constructor(private router: Router, private reg: RegisterService) {
-//   this.info = {
-//     username: '',
-//     password: '',
-//     email: ''
-//   };
-//   this.loading = false;
-// }
-
-// register() {
-//   this.reg.register(this.info)
-//     .subscribe(result => {
-//       if (result === true) {
-//         this.router.navigate(['/login']);
-//       } else {
-//         console.log('error');
-//       }
-//     });
-//  }
-
-// ngOnInit() {
-// }
-
-
-// --------------------------
-
-// import { Component, OnInit } from '@angular/core';
-// import { HttpErrorResponse } from '@angular/common/http';
-// import { Router } from '@angular/router';
-
-// import { User } from '../../model/index';
-// import { AuthenticationService } from '../../service/authentication.service';
-
-// register() {
-//   // password check mechanism
-//   if (this.newAccount.password === this.passwordcheck) {
-//     this.auth.register(this.newAccount)
-//       .subscribe( res => {
-//         if (res.status === 200) {
-//           // set the authentication token
-//           localStorage.setItem( this.auth.getJWT(JSON.stringify({user: this.newAccount.username}));
-//           this.newAccount = new User();
-//           this.router.navigate(['/landing']);
-//         } else {
-//           console.log('Failed to Register');
-//         }
-//       });
-
-//   } else {
-//     console.log('passwords must match');
-//   }
-
-// }

@@ -25,14 +25,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './account/register/register.component';
 import { LoginComponent } from './account/login/login.component';
-import { LogoutComponent } from './account/logout/logout.component';
 import { ViewPlaylistComponent } from './page/view-playlist/view-playlist.component';
 import { AddPlaylistComponent } from './page/add-playlist/add-playlist.component';
 import { AddVideoComponent } from './page/add-video/add-video.component';
 import { ViewVideoComponent } from './page/view-video/view-video.component';
 import { HomePageComponent } from './home/home-page/home-page.component';
 import { LandingPageComponent } from './home/landing-page/landing-page.component';
-import { SearchSongComponent } from './page/search-song/search-song.component';
 import { NowPlayingPipe } from './pipe/now-playing.pipe';
 import { VideoPlayerComponent } from './video/video-player/video-player.component';
 import { VideoPlaylistComponent } from './video/video-playlist/video-playlist.component';
@@ -46,6 +44,7 @@ import { BrowserNotificationService } from './service/browser-notification.servi
 import { VideoPageComponent } from './video/video-page/video-page.component';
 import { NoAuthComponent } from './page/no-auth/no-auth.component';
 import { SeePlaylistComponent } from './video/see-playlist/see-playlist.component';
+import { ProfileComponent } from './account/profile/profile.component';
 
 
 @NgModule({
@@ -54,7 +53,6 @@ import { SeePlaylistComponent } from './video/see-playlist/see-playlist.componen
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    LogoutComponent,
 
     ViewPlaylistComponent,
     AddPlaylistComponent,
@@ -63,7 +61,6 @@ import { SeePlaylistComponent } from './video/see-playlist/see-playlist.componen
 
     HomePageComponent,
     LandingPageComponent,
-    SearchSongComponent,
 
     NowPlayingPipe,
     VideoPlayerComponent,
@@ -71,7 +68,8 @@ import { SeePlaylistComponent } from './video/see-playlist/see-playlist.componen
     VideoSearchComponent,
     SearchResultComponent,
     NoAuthComponent,
-    SeePlaylistComponent
+    SeePlaylistComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

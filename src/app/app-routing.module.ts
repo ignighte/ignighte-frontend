@@ -6,9 +6,9 @@ import { HomePageComponent } from './home/home-page/home-page.component';
 import { LandingPageComponent } from './home/landing-page/landing-page.component';
 import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
+import { ProfileComponent } from './account/profile/profile.component';
 
 // Remove if test works
-import { SearchSongComponent } from './page/search-song/search-song.component';
 import { AddVideoComponent } from './page/add-video/add-video.component';
 import { AddPlaylistComponent } from './page/add-playlist/add-playlist.component';
 import { ViewVideoComponent } from './page/view-video/view-video.component';
@@ -29,8 +29,8 @@ const routes: Routes = [
   { path: 'landing', component: LandingPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent},
+  { path: 'profile', component: ProfileComponent },
 // Remove After VideoRoutes Work
-  { path: 'search-song', component: SearchSongComponent },
   { path: 'add-video', component: AddVideoComponent },
   { path: 'add-playlist', component: AddPlaylistComponent },
   { path: 'view-playlist', component: ViewPlaylistComponent },
