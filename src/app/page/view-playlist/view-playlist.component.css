@@ -9,6 +9,8 @@ h1, h3, btn {
   text-align: center;
 }
 
+/* I am using 1px because I want a very minimal
+boarder around these elements no matter the size*/
 .playlists {
   margin-left: 25%;
   margin-right: 25%;
