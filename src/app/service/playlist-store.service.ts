@@ -51,14 +51,14 @@ export class PlaylistStoreService {
       this.init();
     }
 
-  // With X button, cut out the video
+  // With X button, remove the video
   public removeFromPlaylist(video: any): void {
     let store = this.parse();
     store.playlists = store.playlists.filter(item => item.id !== video.id);
     localStorage.setItem(this.vidPlayer, JSON.stringify(store));
   }
 
-  // utility parse function for JSONed vids
+  // parse
   private parse() {
     return JSON.parse(localStorage.getItem(this.vidPlayer));
   }

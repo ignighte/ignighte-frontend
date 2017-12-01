@@ -1,5 +1,3 @@
-<!-- Commented Out the material design cells and layouts to be subbed in with CSS, left the buttons -->
-
 <h2 class="search-video-title-header">Search Videos</h2>
 <form class="search-bar-field" [formGroup]="searchForm" (ngSubmit)="doSearch($event)">
 
@@ -7,15 +5,9 @@
       <input class="mdl-textfield__input" placeholder="Search for the song" formControlName="query" type="text" id="query" autocomplete="off">
       <button class="search-button float-left" type="submit">
         <i class="material-icons">search</i>
-        <label class="mdl-textfield__label" for="query">Search</label>
       </button>
       <a routerLink="/landing"><button class="search-button return-home">
-          <i class="material-icons">reply</i>
-          <label class="mdl-textfield__label" for="query">Home</label>
+          <i class="material-icons">home</i>
       </button></a>
     </div>
-
-    <!-- <button type="submit" class="mdl-button mdl-js-button mdl-button--icon">
-      <i class="material-icons">search</i>
-    </button> -->
 </form>

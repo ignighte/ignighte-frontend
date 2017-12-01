@@ -5,8 +5,7 @@ import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 
-
-import { NotificationService } from './notification.service';
+// import { NotificationService } from './notification.service';
 import { YOUTUBE_API_KEY } from '../model/api-key';
 
 @Injectable()
@@ -23,8 +22,8 @@ export class YoutubeApiService {
   public lastQuery: string;
 
   constructor(
-    private http: Http,
-    private notificationService: NotificationService
+    private http: Http
+    // private notificationService: NotificationService
   ) { }
 
   // Song Search
@@ -35,9 +34,7 @@ export class YoutubeApiService {
     return this.http.get(url)
       .map(response => {
         let jsonRes = response.json();
-        console.log('jsonRes: ', jsonRes);
         let res = jsonRes['items'];
-        console.log('res: ', res);
         this.lastQuery = query;
         this.nextToken = jsonRes['nextPageToken'] ? jsonRes['nextPageToken'] : undefined;
 
@@ -82,7 +79,6 @@ export class YoutubeApiService {
 
     return this.http.get(url)
       .map(results => {
-        console.log(results.json()['items']);
         return results.json()['items'];
       })
       .toPromise()
@@ -99,7 +95,7 @@ export class YoutubeApiService {
     } else {
       errMsg = error.message ? error.message : error.toString();
     }
-    this.notificationService.showNotification(errMsg);
+    alert(errMsg);
     return Promise.reject(errMsg);
   }
 

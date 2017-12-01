@@ -43,13 +43,13 @@ export class VideoPlaylistComponent implements OnInit {
     return this.youtubePlayer.getCurrentVideo() === id;
   }
 
-  // delete button
+  // delete
   removeFromPlaylist(video: Object): void {
     this.videoPlaylist.splice(this.videoPlaylist.indexOf(video), 1);
     this.playlistService.removeFromPlaylist(video);
   }
 
-  // Traverse Playlist
+  // TO traverse Playlist on browser
   playNextVideo(): void {
     let current = this.youtubePlayer.getCurrentVideo();
     let inPlaylist;
@@ -65,6 +65,7 @@ export class VideoPlaylistComponent implements OnInit {
       }
     });
 
+    // If playlist loaded fine
     if (inPlaylist !== undefined) {
       let topPos = document.getElementById(this.videoPlaylist[inPlaylist].id).offsetTop;
       let playlistEl = document.getElementById('playlist');
@@ -77,7 +78,7 @@ export class VideoPlaylistComponent implements OnInit {
           this.youtubePlayer.playVideo(this.videoPlaylist[0].id, this.videoPlaylist[0].snippet.title);
           playlistEl.scrollTop = 0;
         } else {
-          this.youtubePlayer.playVideo(this.videoPlaylist[inPlaylist + 1].id, this.videoPlaylist[inPlaylist + 1].snippet.title)
+          this.youtubePlayer.playVideo(this.videoPlaylist[inPlaylist + 1].id, this.videoPlaylist[inPlaylist + 1].snippet.title);
           playlistEl.scrollTop = topPos - 100;
         }
       }

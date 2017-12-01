@@ -2,12 +2,7 @@ import { Component, AfterViewInit } from '@angular/core';
 import { YoutubeApiService } from '../../service/youtube-api.service';
 import { YoutubePlayerService } from '../../service/youtube-player.service';
 import { PlaylistStoreService } from '../../service/playlist-store.service';
-// import { NotificationService } from '../../service/notification.service';
 import { Http, Headers, Response  } from '@angular/http';
-// import { SearchResultComponent } from '../search-result/search-result.component';
-// import { VideoPlayerComponent} from '../video-player/video-player.component';
-// import { VideoPlaylistComponent } from '../video-playlist/video-playlist.component';
-// import { VideoSearchComponent } from '../video-search/video-search.component';
 
   // Temp for localhost
   const posturl = 'http://54.68.90.169:8080/playlist';
@@ -35,7 +30,6 @@ export class VideoPageComponent implements AfterViewInit {
     private youtubeService: YoutubeApiService,
     private youtubePlayer: YoutubePlayerService,
     private playlistService: PlaylistStoreService,
-    // private notificationService: NotificationService,
     private http: Http
   ) {
     this.videoPlaylist = this.playlistService.retrieveStorage().playlists;
@@ -93,16 +87,6 @@ export class VideoPageComponent implements AfterViewInit {
     this.playPrevNext(false);
   }
 
-
-  // Extend Playlist View
-  togglePlaylist(): void {
-    this.playlistToggle = !this.playlistToggle;
-    setTimeout(() => {
-      this.playlistNames = !this.playlistNames;
-    }, 200);
-  }
-
-  // Load Search Results from YOUTUBE API with load limit and timeout
   searchMore(): void {
     if (this.loadingInProgress || this.pageLoadingFinished || this.videoList.length < 1) {
       return;
@@ -130,6 +114,7 @@ export class VideoPageComponent implements AfterViewInit {
   }
 
   // player nav
+  // Change this to more robust function later; it takes way too long with if
   playPrevNext(value): void {
     let current = this.youtubePlayer.getCurrentVideo();
     let inPlaylist;
@@ -141,7 +126,6 @@ export class VideoPageComponent implements AfterViewInit {
       }
     });
 
-    // FUCK TS AND SAVE ME FROM THIS IF-ELSE SPAGHETTI HELL
     if (inPlaylist !== undefined) {
       let topPos = document.getElementById(this.videoPlaylist[inPlaylist].id).offsetTop;
       if (this.shuffle) {
@@ -173,22 +157,15 @@ export class VideoPageComponent implements AfterViewInit {
     }
   }
 
-  // Playlist Bar Functionalities
-  // closePlaylist(): void {
-  //   this.playlistToggle = false;
-  //   this.playlistNames = false;
-  // }
-
   clearPlaylist(): void {
     this.videoPlaylist = [];
     this.playlistService.clearPlaylist();
-    this.notificationService.showNotification('Playlist cleared.');
   }
 
   // deprecated for now
   exportPlaylist(): void {
     if (this.videoPlaylist.length < 1) {
-      this.notificationService.showNotification('Nothing to export.');
+      alert('Nothing to export.');
       return;
     }
     let data = JSON.stringify(this.videoPlaylist);
@@ -197,32 +174,24 @@ export class VideoPageComponent implements AfterViewInit {
     a.href = URL.createObjectURL(file);
     a.download = 'playlist.json';
     a.click();
-    this.notificationService.showNotification('Playlist exported.');
+    alert('Playlist exported.');
   }
 
   // save playlist -> for POST create-playlist
   savePlaylist() {
     if (this.videoPlaylist.length < 1) {
-      this.notificationService.showNotification('Playlist Empty.');
+      alert('Cannot Save Empty Playlist.');
       return;
     }
     // let data = JSON.stringify(this.videoPlaylist);
     // save this data with name and send to backend
     return this.http.post(posturl, JSON.stringify(this.videoPlaylist))
       .map(response => response.json());
-
-
-    // let a = document.createElement('a');
-    // let file = new Blob([data], { type: 'text/json' });
-    // a.href = URL.createObjectURL(file);
-    // a.download = 'playlist.json';
-    // a.click();
-    // this.notificationService.showNotification('Playlist saved.');
   }
 
+  // import playlist
   importPlaylist(playlist: any): void {
     this.videoPlaylist = playlist;
-    console.log('store-playlist');
     this.playlistService.importPlaylist(this.videoPlaylist);
   }
 }
