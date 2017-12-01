@@ -5,7 +5,7 @@ import { NgModel } from '@angular/forms';
 import { EmailValidator } from '@angular/forms';
 
 // const url = `https://localhost:4200/register`;
-const url = `http://54.68.90.169/register`;
+const url = 'http://54.68.90.169/register';
 
 @Component({
   selector: 'app-register',
