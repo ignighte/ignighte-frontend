@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Login, User } from '../../model/index';
 import { AuthenticationService } from '../../service/authentication.service';
 
-const url = `http://54.68.90.169:8080/login`;
+const url = `http://54.68.90.169/login`;
 
 @Component({
   selector: 'app-login',
@@ -37,13 +37,15 @@ export class LoginComponent implements OnInit {
   login() {
     this.loading = true;
     this.auth.login(this.account.username, this.account.password)
-      .subscribe(data => {
-        this.router.navigate([url]);
-      },
-      error => {
-        console.log(error);
+      .subscribe(result => {
+        if (result !== false) {
+          alert('successfully logged in');
+          localStorage.setItem('token', result.TOKEN);
+          this.router.navigate(['/home']);
+        }}, (error => {
+        alert('account or password information is incorrect');
         this.loading = false;
-      });
+      }));
   }
 
   // login() {

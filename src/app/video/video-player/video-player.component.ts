@@ -114,6 +114,7 @@ export class VideoPlayerComponent implements AfterContentInit {
 
   exportPlaylistAction(): void {
     this.exportPlaylist.emit();
+    this.clearPlaylist.emit();    
   }
 
   importPlaylistAction(): void {

@@ -5,7 +5,7 @@ import { Http, Headers, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 
   // Temp for localhost
-  const url = 'http://54.68.90.169:8080/login';
+  const url = 'http://54.68.90.169/login';
 
 @Injectable()
 export class AuthenticationService {
@@ -19,7 +19,7 @@ export class AuthenticationService {
       .map((response: Response) => {
         // if successful, jwt response
         let user = response.json();
-        if (user && user.token) {
+        if (user) {
           // store jwt + user info in local
           localStorage.setItem('currentUser', JSON.stringify(user));
         }
