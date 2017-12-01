@@ -13,8 +13,7 @@ import { Playlist } from '../../model/playlist';
 })
 export class ViewPlaylistComponent implements OnInit {
 
-  allPlaylists: Playlist[] = [];
-  userPlaylists: Playlist;
+
   @Input() playlistId: number;
 
   constructor(private http: Http, private route: ActivatedRoute, private router: Router) { }
@@ -24,17 +23,17 @@ export class ViewPlaylistComponent implements OnInit {
   }
 
   // Getting One Playlist
-  getPlaylistById() {
-    this.route.params
-    .subscribe((params: Params) => {
-    this.playlistId = +params['id'];
-  });
+  // getPlaylistById() {
+  //   this.route.params
+  //   .subscribe((params: Params) => {
+  //   this.playlistId = +params['id'];
+  // });
 
-  this.play.getPlaylistById(this.playlistId)
-    .subscribe(result => {
-      console.log(result);
-      this.userPlaylists = result;
-    });
+  // this.play.getPlaylistById(this.playlistId)
+  //   .subscribe(result => {
+  //     console.log(result);
+  //     this.userPlaylists = result;
+  //   });
 
   }
 

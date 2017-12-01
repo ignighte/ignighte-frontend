@@ -14,7 +14,7 @@ export class AccountService {
 
   // [POST]'/changePassword'
   changePassword(username: string, password: string, newPassword: string) {
-    console.log('before return', 'json: ', JSON.stringify({      username: username,
+    console.log('before return', 'json: ', JSON.stringify({username: username,
       password: password,
       newPassword: newPassword}));
     return this.http.put('http://54.68.90.169/changePassword', JSON.stringify({

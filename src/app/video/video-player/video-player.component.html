@@ -1,32 +1,15 @@
-<!-- Commented Out the material design cells and layouts to be subbed in with CSS, left the buttons -->
-<!-- Disabled Size Alteration -->
-
 <div class="main-player-block">
-  <!-- <h1 class="boxed">Video Player</h1> -->
     <div class="player-controls-block">
-      <!-- <div class="current-playing-text" *ngIf="superMinPlayer"> -->
-      <!-- Always display What's playing -->
-      <!-- <div class="current-playing-text">
-        <span class="now-playing-label">Now playing: </span>
-        <span>{{ currentVideoText | nowPlaying }}</span>
-      </div> -->
 
       <!-- Youtube Player -->
-      <div class="player-containter" [ngClass]="{'minimized': minPlayer, 'super-minimized': superMinPlayer, 'player-fullscreen': fullscreenActive}">
-        <!-- If we figure out the css sizing shit, we can reopen -->
-
-        <div class="player-view-controls">
-          <!-- <i class="material-icons minimize" *ngIf="!superMinPlayer && !fullscreenActive" (click)="minimizePlayer()">arrow_drop_down</i> -->
-        </div>
+      <div class="player-containter">
         <div class="main-yt-player-block">
-          <!-- <i class="material-icons" *ngIf="superMinPlayer" (click)="minimizePlayer()">zoom_out_map</i> -->
           <div class="actual-player" id="yt-player">
-          <!-- Always display What's playing -->
-
           </div>
         </div>
       </div>
 
+      <!-- Display this beneath the playlist instead -->
       <div class="current-playing-text">
           <span class="now-playing-label">Now playing : {{ currentVideoText | nowPlaying }}</span>
       </div>
@@ -53,20 +36,18 @@
             <h6>next</h6>
           </button>
 
-          <!-- <span class="repeat-shuffle-block"> -->
+          <button class="youtube-button" id="repeat_tip" [ngClass]="{'active': repeat}"
+                  (click)="toggleRepeat()">
+            <i class="rpt-btn" class="material-icons">repeat_one</i>
+            <h6>repeat</h6>
+          </button>
 
-            <button class="youtube-button" id="repeat_tip" [ngClass]="{'active': repeat}"
-                    (click)="toggleRepeat()">
-              <i class="rpt-btn" class="material-icons">repeat_one</i>
-              <h6>repeat</h6>
-            </button>
-
-            <button class="youtube-button" id="shuffle_tip" [ngClass]="{'active': shuffle}"
-              (click)="toggleShuffle()">
-              <i class="material-icons">shuffle</i>
-              <h6>shuffle</h6>
-            </button>
-        </nav>
+          <button class="youtube-button" id="shuffle_tip" [ngClass]="{'active': shuffle}"
+            (click)="toggleShuffle()">
+            <i class="material-icons">shuffle</i>
+            <h6>shuffle</h6>
+          </button>
+      </nav>
     </div>
     <button class="youtube-button-2" (click)="exportPlaylistAction()">Export Playlist</button>
     <button class="youtube-button-2" (click)="importPlaylistAction()">Import Playlist</button>

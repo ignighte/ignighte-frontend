@@ -2,7 +2,6 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { YoutubeApiService } from '../../service/youtube-api.service';
 import { YoutubePlayerService } from '../../service/youtube-player.service';
-import { NotificationService } from '../../service/notification.service';
 
 
 @Component({
@@ -25,8 +24,7 @@ export class VideoSearchComponent implements OnInit {
   constructor(
     public fb: FormBuilder,
     private youtubeService: YoutubeApiService,
-    private youtubePlayer: YoutubePlayerService,
-    private notificationService: NotificationService
+    private youtubePlayer: YoutubePlayerService
   ) {
       this.youtubeService.searchVideos('')
       .then(data => {
@@ -50,7 +48,7 @@ export class VideoSearchComponent implements OnInit {
     this.youtubeService.searchVideos(this.last_search)
       .then(data => {
         if (data.length < 1) {
-          this.notificationService.showNotification('No matches found.');
+          alert('No matches found. Please Try with Different Keyword');
         }
         this.videosUpdated.emit(data);
       })

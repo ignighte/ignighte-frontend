@@ -1,7 +1,5 @@
 import { Component, Input, AfterContentInit, Output, EventEmitter} from '@angular/core';
 import { YoutubePlayerService } from '../../service/youtube-player.service';
-import { NotificationService } from '../../service/notification.service';
-import { BrowserNotificationService } from '../../service/browser-notification.service';
 
 
 @Component({
@@ -12,14 +10,11 @@ import { BrowserNotificationService } from '../../service/browser-notification.s
 export class VideoPlayerComponent implements AfterContentInit {
 
   // video functionality
-  public minPlayer = true;
-  public superMinPlayer = false;
+
   public playingEvent = 'pause';
   public shuffle = false;
   public repeat = false;
-  public fullscreenActive = false;
   public currentVideoText = 'None';
-  public notifications = false;
 
   @Output() repeatActive = new EventEmitter();
   @Output() shuffleActive = new EventEmitter();
@@ -32,9 +27,7 @@ export class VideoPlayerComponent implements AfterContentInit {
   @Output() closePlaylist = new EventEmitter();
 
   constructor(
-    private youtubePlayer: YoutubePlayerService,
-    private notificationService: NotificationService,
-    private browserNotification: BrowserNotificationService
+    private youtubePlayer: YoutubePlayerService
   ) {
     this.youtubePlayer.playPauseEvent.subscribe(event => this.playingEvent = event);
     this.youtubePlayer.currentVideoText.subscribe(event => this.currentVideoText = event || 'None');
@@ -49,16 +42,6 @@ export class VideoPlayerComponent implements AfterContentInit {
     doc.body.appendChild(playerApi);
 
     this.youtubePlayer.createPlayer();
-  }
-
-  // Display Full Screen save for navbar and playlist
-  toggleFullscreen(): void {
-    this.minPlayer = false;
-    this.superMinPlayer = false;
-    this.fullscreenActive = !this.fullscreenActive;
-    let width = this.fullscreenActive ? window.innerWidth - 70 : 440;
-    let height = this.fullscreenActive ? window.innerHeight - 120 : 250;
-    this.youtubePlayer.resizePlayer(width, height);
   }
 
   // play and pause video in in-app player
@@ -80,16 +63,6 @@ export class VideoPlayerComponent implements AfterContentInit {
     this.prevVideoEvent.emit();
   }
 
-  // Player Size Control
-  togglePlayer(): void {
-    this.minPlayer = !this.minPlayer;
-    this.superMinPlayer = false;
-  }
-
-  minimizePlayer(): void {
-    this.superMinPlayer = !this.superMinPlayer;
-  }
-
   // Player Bar
   toggleRepeat(): void {
     this.repeat = !this.repeat;
@@ -103,18 +76,13 @@ export class VideoPlayerComponent implements AfterContentInit {
     this.shuffleActive.emit(this.shuffle);
   }
 
-  // playlist actions
-  openClosedPlaylist(): void {
-    this.closePlaylist.emit();
-  }
-
   clearPlaylistAction(): void {
     this.clearPlaylist.emit();
   }
 
   exportPlaylistAction(): void {
     this.exportPlaylist.emit();
-    this.clearPlaylist.emit();    
+    this.clearPlaylist.emit();
   }
 
   importPlaylistAction(): void {
@@ -122,53 +90,34 @@ export class VideoPlayerComponent implements AfterContentInit {
     import_button.click();
   }
 
-  // temp function for importing JSON
+  // temp function for importing JSON -> we will rewrite the inputChange to read in from
   handleInputChange(e: any): void {
-    console.log('begining of file');
+    console.log('begining of file input');
     let file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
 
     if (file.name.split('.').pop() !== 'json') {
-      this.notificationService.showNotification('File not supported.');
+      alert('input Json')
       return;
     }
 
-    console.log('at reader');
     let reader = new FileReader();
     let me = this;
 
     reader.readAsText(file);
     reader.onload = function (ev) {
       let list;
-      console.log('loaded');      
       try {
         list = JSON.parse(ev.target['result']);
       } catch (exc) {
         list = null;
       }
       if (!list || list.length < 1) {
-        me.notificationService.showNotification('Playlist not valid.');
+        alert('Playlist not valid.');
         return;
       }
 
       me.importPlaylist.emit(list);
-      me.notificationService.showNotification('Playlist imported.');
       document.getElementById('import_button')['value'] = '';
     }
   }
-
-  // Notification
-  toggleNotifications(): void {
-    this.notifications ?
-      (
-        this.notifications = false,
-        this.browserNotification.disable()
-      ) :
-      this.browserNotification.checkNotification().then(async res => {
-        this.notifications = res === 'granted' ? true : (
-          this.notificationService.showNotification('Browser notifications blocked.'),
-          false
-        );
-      });
-  }
-
 }

@@ -3,8 +3,6 @@
 
 import { Injectable, EventEmitter, Output } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { NotificationService } from './notification.service';
-import { BrowserNotificationService } from './browser-notification.service';
 
 let _window: any = window;
 
@@ -19,10 +17,7 @@ export class YoutubePlayerService {
   @Output() playPauseEvent: EventEmitter<any> = new EventEmitter(true);
   @Output() currentVideoText: EventEmitter<any> = new EventEmitter(true);
 
-  // have notification on build
   constructor(
-    public notificationService: NotificationService,
-    public browserNotification: BrowserNotificationService
   ) { }
 
   // main function to create the youtube player in app
@@ -69,14 +64,12 @@ export class YoutubePlayerService {
   playVideo(videoId: string, videoText?: string): void {
     // deprecate function
     if (!this.yt_player) {
-      this.notificationService.showNotification('Player not ready.');
+      console.log('player load error');
       return;
     }
     this.yt_player.loadVideoById(videoId);
     this.currentVideoId = videoId;
     this.currentVideoText.emit(videoText);
-    // deprecate function
-    this.browserNotification.show(videoText);
   }
 
   pausePlayingVideo(): void {

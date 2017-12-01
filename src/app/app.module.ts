@@ -5,12 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 import { Location } from '@angular/common';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-
-// fakebackend
-import { fakeBackendProvider } from './_helpers/fake-backend';
-import { MockBackend, MockConnection } from '@angular/http/testing';
-import { BaseRequestOptions } from '@angular/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 // internal module
 import { AppRoutingModule } from './app-routing.module';
@@ -19,16 +14,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { RegisterService } from './service/register.service';
 import { AuthenticationService } from './service/authentication.service';
 import { AccountService } from './service/account.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 
 // internal components
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './account/register/register.component';
 import { LoginComponent } from './account/login/login.component';
 import { ViewPlaylistComponent } from './page/view-playlist/view-playlist.component';
-import { AddPlaylistComponent } from './page/add-playlist/add-playlist.component';
-import { AddVideoComponent } from './page/add-video/add-video.component';
-import { ViewVideoComponent } from './page/view-video/view-video.component';
+
 import { HomePageComponent } from './home/home-page/home-page.component';
 import { LandingPageComponent } from './home/landing-page/landing-page.component';
 import { NowPlayingPipe } from './pipe/now-playing.pipe';
@@ -39,11 +32,10 @@ import { SearchResultComponent } from './video/search-result/search-result.compo
 import { YoutubeApiService } from './service/youtube-api.service';
 import { YoutubePlayerService } from './service/youtube-player.service';
 import { PlaylistStoreService } from './service/playlist-store.service';
-import { NotificationService } from './service/notification.service';
-import { BrowserNotificationService } from './service/browser-notification.service';
+
 import { VideoPageComponent } from './video/video-page/video-page.component';
-import { NoAuthComponent } from './page/no-auth/no-auth.component';
-import { SeePlaylistComponent } from './video/see-playlist/see-playlist.component';
+
+// import { SeePlaylistComponent } from './video/see-playlist/see-playlist.component';
 import { ProfileComponent } from './account/profile/profile.component';
 
 
@@ -55,9 +47,6 @@ import { ProfileComponent } from './account/profile/profile.component';
     LoginComponent,
 
     ViewPlaylistComponent,
-    AddPlaylistComponent,
-    AddVideoComponent,
-    ViewVideoComponent,
 
     HomePageComponent,
     LandingPageComponent,
@@ -67,8 +56,7 @@ import { ProfileComponent } from './account/profile/profile.component';
     VideoPlaylistComponent,
     VideoSearchComponent,
     SearchResultComponent,
-    NoAuthComponent,
-    SeePlaylistComponent,
+    // SeePlaylistComponent,
     ProfileComponent
   ],
   imports: [
@@ -85,17 +73,11 @@ import { ProfileComponent } from './account/profile/profile.component';
     YoutubeApiService,
     YoutubePlayerService,
     PlaylistStoreService,
-    NotificationService,
-    BrowserNotificationService,
+
     RegisterService,
     AuthenticationService,
     AccountService,
-    HttpClient,
-
-    // providers used to create fake backend
-    fakeBackendProvider,
-    MockBackend,
-    BaseRequestOptions
+    HttpClient
   ],
   bootstrap: [AppComponent]
 })
