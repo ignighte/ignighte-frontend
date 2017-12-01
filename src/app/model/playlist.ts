@@ -1,7 +1,7 @@
 export class Playlist {
     playlistName?: string;
-    expireTime?: number;
-    isActive?: boolean;
-    isPrivate?: boolean;
+    title?: string;
+    userid?: number;
+    isPublic?: boolean;
     passcode?: string;
 }

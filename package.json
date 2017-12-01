@@ -27,6 +27,7 @@
     "core-js": "^2.4.1",
     "jquery": "^3.2.1",
     "material-components-web": "^0.26.0",
+    "ng-vote": "^0.1.5",
     "popper.js": "^1.12.9",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
