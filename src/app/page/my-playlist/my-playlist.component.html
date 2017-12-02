@@ -10,30 +10,34 @@
       <!--Playlist container-->
       <div class="container float-left fit">
           <div id="playlist-tab-d" class ="vid-playlist">
-            <app-video-playlist 
-              [repeat]="repeat" 
-              [shuffle]="shuffle" 
-              [playlistNames]="playlistNames" 
+            <app-video-playlist
+              [repeat]="repeat"
+              [shuffle]="shuffle"
+              [playlistNames]="playlistNames"
               [videoPlaylist]="videoPlaylist">
             </app-video-playlist>
           </div>
       </div>
     </div>
     <div class="col col-md-7 shrink-fit">
+      <br>
+      <h1>Your Music</h1>
       <!--Video player-->
       <div class="video-player-container">
         <a routerLink="/landing"><button class="return-home-btn"><i class="material-icons">home</i></button></a>          
         <div class="in-yt-player">
-            <app-video-player (importPlaylist)="importPlaylist($event)" 
-            (exportPlaylist)="exportPlaylist()" 
+            <app-video-player (importPlaylist)="importPlaylist($event)"
+            (exportPlaylist)="exportPlaylist()"
             (clearPlaylist)="clearPlaylist()"
-            (playFirstInPlaylist)="playFirstInPlaylist()" 
-            (repeatActive)="repeatActive($event)" 
-            (shuffleActive)="shuffleActive($event)" 
-            (nextVideoEvent)="nextVideo()" 
+            (playFirstInPlaylist)="playFirstInPlaylist()"
+            (repeatActive)="repeatActive($event)"
+            (shuffleActive)="shuffleActive($event)"
+            (nextVideoEvent)="nextVideo()"
             (prevVideoEvent)="prevVideo()">
             </app-video-player>
         </div>
       </div>
+      <h1>Your Way</h1>
+      <button class="home" routerLink="/home">Return to IGNIGHTE Home</button>
     </div>
   </div>

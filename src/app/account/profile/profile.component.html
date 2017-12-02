@@ -1,3 +1,4 @@
+<br>
 <div class="body">
   <header id="header">
     <div class="logo">
@@ -11,22 +12,22 @@
     <br>
     <form name="form" (ngSubmit)="f.form.valid && changePassword()" #f="ngForm" novalidate>
         <div class="form-group">
-            <label for="username">Account:</label>
+            <label for="username">Username:</label>
             <input type="text" name="username" id="username" class="form-control" [(ngModel)]="account.username" #username="ngModel" placeholder="Username" required />
             <div *ngIf="f.submitted && !username.valid" class="text-danger">Username is required</div>
         </div>
         <div class="form-group">
             <label for="password">Password:</label>
             <input type="password" name="password" id="password" class="form-control" [(ngModel)]="account.password" #password="ngModel"  placeholder="Password" required />
-            <div *ngIf="f.submitted && !password.valid" class="text-danger">Password is required</div>  
+            <div *ngIf="f.submitted && !password.valid" class="text-danger">Password is required</div>
         </div>
         <div class="form-group">
             <label for="new password"> New Password:</label>
             <input type="password" name="newPassword" id="newPassword" class="form-control" [(ngModel)]="account.newPassword" #newPassword="ngModel"  placeholder="New Password" required />
-            <div *ngIf="f.submitted && !newPassword.valid" class="text-danger">Password is required</div>  
+            <div *ngIf="f.submitted && !newPassword.valid" class="text-danger">Password is required</div>
         </div>
-
         <div class="form-actions">
+            <br>
             <button type="submit" class="btn btn-secondary">Change Password</button>
         </div>
     </form>

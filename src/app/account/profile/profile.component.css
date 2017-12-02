@@ -1,0 +1,13 @@
+.top-line {
+  border-top: 0.1rem solid white;
+}
+
+h1 {
+  margin-top: 2%;
+  font-family: 'Cambria';
+  text-align: center;
+}
+
+.form-control{
+  background: linear-gradient(to right, black , darkgrey);
+}
