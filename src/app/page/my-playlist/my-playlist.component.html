@@ -22,6 +22,7 @@
     <div class="col col-md-7 shrink-fit">
       <!--Video player-->
       <div class="video-player-container">
+        <a routerLink="/landing"><button class="return-home-btn"><i class="material-icons">home</i></button></a>          
         <div class="in-yt-player">
             <app-video-player (importPlaylist)="importPlaylist($event)" 
             (exportPlaylist)="exportPlaylist()" 
