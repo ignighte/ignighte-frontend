@@ -24,7 +24,6 @@
       <h1>Your Music</h1>
       <!--Video player-->
       <div class="video-player-container">
-        <a routerLink="/landing"><button class="return-home-btn"><i class="material-icons">home</i></button></a>          
         <div class="in-yt-player">
             <app-video-player (importPlaylist)="importPlaylist($event)"
             (exportPlaylist)="exportPlaylist()"
@@ -38,6 +37,6 @@
         </div>
       </div>
       <h1>Your Way</h1>
-      <button class="home" routerLink="/home">Return to IGNIGHTE Home</button>
+      <button class="home" routerLink="/landing">Return to IGNIGHTE Home</button>
     </div>
   </div>
