@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate {
     if (jwt) {
       return true;
     } else {
-      alert('you are not logged in');
+      alert('You are not logged in');
       this.router.navigate(['/login']);
       return false;
     }

@@ -28,11 +28,11 @@ export class ProfileComponent implements OnInit {
     this.acc.changePassword(this.account.username, this.account.password, this.account.newPassword)
       .subscribe(result => {
         if (result !== false) {
-          alert('password change successful');
+          alert('Password successfully changed');
           console.log('result: ', result);
           this.router.navigate(['/landing']);
         }}, (error => {
-          alert('your credentials are incorrect');
+          alert('Your credentials are incorrect');
           console.log('result: ');
         })
       );

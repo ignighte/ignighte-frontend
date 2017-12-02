@@ -6,9 +6,11 @@
    border-top: 1px solid white;
  }
 
-h1 {
-    font-family: 'Cambria';
-}
+ h1 {
+   margin-top: 2%;
+   font-family: 'Cambria';
+   text-align: center;
+ }
 
 .body {
   padding-top: 1%;
